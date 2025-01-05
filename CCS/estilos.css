@@ -1,0 +1,769 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap");
+
+:root {
+  --padding-container: 100px 0;
+  --color-title: #001a49;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+.container {
+  width: 90%;
+  max-width: 1920px;
+  margin: 0 auto;
+  overflow: hidden;
+  padding: var(--padding-container);
+}
+.hero {
+  width: 100%;
+  height: 100%;
+  
+  min-height: 600px;
+  max-height: 800px;
+  position: relative;
+  display: grid;
+  grid-template-rows: 100px 1fr;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(180deg, #0000008c 0%, #0000008c 100%),
+    url("../Imagenes/peugeot2.jpg");
+  background-size: auto;
+  clip-path: polygon(25% 0%, 75% 20%, 100% 50%, 55% 66%, 25% 100%, 0% 50%);
+  z-index: -1;
+}
+
+.hero2 {
+  width: 100%;
+  height: 100%;
+  min-height: none;
+  max-height: 100px;
+  position: relative;
+  display: grid;
+  grid-template-rows: 100px 1fr;
+}
+
+.hero2::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: contain;
+  z-index: -1;
+}
+
+.nav {
+  --padding-container: 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.nav_title {
+  font: weight 300px;
+}
+
+.nav_link {
+  margin-left: auto;
+  padding: 0;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: max-content;
+  gap: 2em;
+}
+
+.usuario{
+  font-size:25px ;
+  color: #000000;
+  text-decoration: none;
+  margin-left: 2em;
+}
+.nav_items {
+  list-style: none;
+}
+
+.nav_links {
+  color: #000000;
+  text-decoration: none;
+}
+
+.nav_menu {
+  margin-left: 0%;
+  cursor: grab;
+  display: grid;
+}
+
+.nav_img {
+  display: block;
+  width: 30px;
+}
+
+.nav_close {
+  display: var(--show, grid);
+}
+
+.hero_container {
+  max-width: 100vw;
+  --padding-container: 0;
+  display: grid;
+  grid-auto-rows: max-content;
+  align-content: center;
+  gap: 1em;
+  padding-bottom: 100px;
+  text-align: center;
+}
+
+.hero_title {
+  font-size: 3rem;
+  color: aliceblue;
+}
+
+.hero_paragraph {
+  margin-bottom: 20px;
+  color: white;
+}
+
+.cta {
+  display: inline-block;
+  background-color: rgb(0, 0, 0);
+  justify-self: center;
+  color: aliceblue;
+  text-decoration: none;
+  padding: 15px 25px;
+  border-radius: 35px;
+}
+
+
+/*about*/
+
+.about {
+  text-align: center;
+}
+
+.subtitle {
+  color: var(--color-title);
+  font-size: 2rem;
+  margin-bottom: 35px;
+}
+
+.about_paragraph {
+  line-height: 1.7;
+}
+.about_main {
+  padding-top: 50px;
+  display: grid;
+  width: 90%;
+  margin: auto;
+  gap: 0.5;
+  overflow: hidden;
+  grid-template-columns: repeat(auto-fit, minmax(400px, auto));
+}
+.img_desarrolladores {
+  width: 200px;
+  height: 250px;
+  position: center;
+}
+
+.about_icons {
+  display: grid;
+  gap: 0.5em;
+  text-align: justify;
+  justify-items: center;
+  width: 400px;
+  overflow: hidden;
+  margin: auto;
+  padding: 10px 10px;
+}
+
+.about_icon {
+  width: 60px;
+}
+
+/*knowledge*/
+
+.knowledge {
+  margin-top: 50px;
+  width: 100%;
+  height: 60%;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: repeat;
+  background-image: url("data:image/svg+xml;utf8,%3Csvg viewBox=%220 0 1200 630%22 xmlns=%22http:%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cmask id=%22b%22 x=%220%22 y=%220%22 width=%221200%22 height=%22630%22%3E%3Cpath fill=%22url(%23a)%22 d=%22M0 0h1200v630H0z%22%2F%3E%3C%2Fmask%3E%3Cpath fill=%22%23091014%22 d=%22M0 0h1200v630H0z%22%2F%3E%3Cg style=%22transform-origin:center center%22 mask=%22url(%23b)%22%3E%3Cpath fill=%22%23ffffff79%22 d=%22M0 0h30v30H0z%22%2F%3E%3Cpath fill=%22none%22 d=%22M30 0h30v30H30z%22%2F%3E%3Cpath fill=%22%23ffffff14%22 d=%22M60 0h30v30H60z%22%2F%3E%3Cpath fill=%22none%22 d=%22M90 0h30v30H90zM120 0h30v30h-30zM150 0h30v30h-30zM180 0h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffffc1%22 d=%22M210 0h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M240 0h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff61%22 d=%22M270 0h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M300 0h30v30h-30zM330 0h30v30h-30zM360 0h30v30h-30zM390 0h30v30h-30zM420 0h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffffe9%22 d=%22M450 0h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffffd5%22 d=%22M480 0h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M510 0h30v30h-30zM540 0h30v30h-30zM570 0h30v30h-30zM600 0h30v30h-30zM630 0h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff5f%22 d=%22M660 0h30v30h-30zM690 0h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M720 0h30v30h-30zM750 0h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffffc8%22 d=%22M780 0h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M810 0h30v30h-30zM840 0h30v30h-30zM870 0h30v30h-30zM900 0h30v30h-30zM930 0h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff6c%22 d=%22M960 0h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff2f%22 d=%22M990 0h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff74%22 d=%22M1020 0h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M1050 0h30v30h-30zM1080 0h30v30h-30zM1110 0h30v30h-30zM1140 0h30v30h-30zM1170 0h30v30h-30zM0 30h30v30H0zM30 30h30v30H30z%22%2F%3E%3Cpath fill=%22%23ffffff65%22 d=%22M60 30h30v30H60z%22%2F%3E%3Cpath fill=%22%23ffffff08%22 d=%22M90 30h30v30H90z%22%2F%3E%3Cpath fill=%22none%22 d=%22M120 30h30v30h-30zM150 30h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffffbc%22 d=%22M180 30h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M210 30h30v30h-30zM240 30h30v30h-30zM270 30h30v30h-30zM300 30h30v30h-30zM330 30h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff6b%22 d=%22M360 30h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M390 30h30v30h-30zM420 30h30v30h-30zM450 30h30v30h-30zM480 30h30v30h-30zM510 30h30v30h-30zM540 30h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff89%22 d=%22M570 30h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff73%22 d=%22M600 30h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffffb8%22 d=%22M630 30h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M660 30h30v30h-30zM690 30h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff3a%22 d=%22M720 30h30v30h-30z%22%2F%3E%3Cpath fill=%22%23fffffff0%22 d=%22M750 30h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M780 30h30v30h-30zM810 30h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff52%22 d=%22M840 30h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M870 30h30v30h-30zM900 30h30v30h-30zM930 30h30v30h-30zM960 30h30v30h-30zM990 30h30v30h-30zM1020 30h30v30h-30zM1050 30h30v30h-30zM1080 30h30v30h-30z%22%2F%3E%3Cpath fill=%22%23fffffffa%22 d=%22M1110 30h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff6a%22 d=%22M1140 30h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffffa3%22 d=%22M1170 30h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M0 60h30v30H0zM30 60h30v30H30zM60 60h30v30H60zM90 60h30v30H90zM120 60h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffffe1%22 d=%22M150 60h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M180 60h30v30h-30zM210 60h30v30h-30zM240 60h30v30h-30zM270 60h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffffe2%22 d=%22M300 60h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M330 60h30v30h-30zM360 60h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff1e%22 d=%22M390 60h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M420 60h30v30h-30zM450 60h30v30h-30zM480 60h30v30h-30zM510 60h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff99%22 d=%22M540 60h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M570 60h30v30h-30zM600 60h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff05%22 d=%22M630 60h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M660 60h30v30h-30zM690 60h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff33%22 d=%22M720 60h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff97%22 d=%22M750 60h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff61%22 d=%22M780 60h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff73%22 d=%22M810 60h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M840 60h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff98%22 d=%22M870 60h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff4d%22 d=%22M900 60h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M930 60h30v30h-30zM960 60h30v30h-30zM990 60h30v30h-30zM1020 60h30v30h-30zM1050 60h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffffa1%22 d=%22M1080 60h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffffbc%22 d=%22M1110 60h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M1140 60h30v30h-30zM1170 60h30v30h-30zM0 90h30v30H0z%22%2F%3E%3Cpath fill=%22%23ffffff58%22 d=%22M30 90h30v30H30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M60 90h30v30H60z%22%2F%3E%3Cpath fill=%22%23ffffffac%22 d=%22M90 90h30v30H90z%22%2F%3E%3Cpath fill=%22none%22 d=%22M120 90h30v30h-30zM150 90h30v30h-30zM180 90h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffffe2%22 d=%22M210 90h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M240 90h30v30h-30zM270 90h30v30h-30zM300 90h30v30h-30zM330 90h30v30h-30zM360 90h30v30h-30zM390 90h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff72%22 d=%22M420 90h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff3c%22 d=%22M450 90h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M480 90h30v30h-30zM510 90h30v30h-30zM540 90h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff2f%22 d=%22M570 90h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M600 90h30v30h-30zM630 90h30v30h-30zM660 90h30v30h-30zM690 90h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff72%22 d=%22M720 90h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M750 90h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff73%22 d=%22M780 90h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M810 90h30v30h-30zM840 90h30v30h-30zM870 90h30v30h-30zM900 90h30v30h-30zM930 90h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff74%22 d=%22M960 90h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffffe6%22 d=%22M990 90h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M1020 90h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff2e%22 d=%22M1050 90h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff40%22 d=%22M1080 90h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M1110 90h30v30h-30zM1140 90h30v30h-30zM1170 90h30v30h-30zM0 120h30v30H0zM30 120h30v30H30zM60 120h30v30H60zM90 120h30v30H90z%22%2F%3E%3Cpath fill=%22%23ffffffc0%22 d=%22M120 120h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M150 120h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffffd9%22 d=%22M180 120h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff6c%22 d=%22M210 120h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff53%22 d=%22M240 120h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffffab%22 d=%22M270 120h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M300 120h30v30h-30zM330 120h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff02%22 d=%22M360 120h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M390 120h30v30h-30zM420 120h30v30h-30zM450 120h30v30h-30zM480 120h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffffbc%22 d=%22M510 120h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M540 120h30v30h-30zM570 120h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff4d%22 d=%22M600 120h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M630 120h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff19%22 d=%22M660 120h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M690 120h30v30h-30zM720 120h30v30h-30zM750 120h30v30h-30zM780 120h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff8f%22 d=%22M810 120h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M840 120h30v30h-30zM870 120h30v30h-30zM900 120h30v30h-30zM930 120h30v30h-30zM960 120h30v30h-30zM990 120h30v30h-30zM1020 120h30v30h-30zM1050 120h30v30h-30zM1080 120h30v30h-30zM1110 120h30v30h-30zM1140 120h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffffb4%22 d=%22M1170 120h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M0 150h30v30H0z%22%2F%3E%3Cpath fill=%22%23ffffff0f%22 d=%22M30 150h30v30H30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M60 150h30v30H60z%22%2F%3E%3Cpath fill=%22%23ffffff7b%22 d=%22M90 150h30v30H90z%22%2F%3E%3Cpath fill=%22%23ffffff2b%22 d=%22M120 150h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M150 150h30v30h-30zM180 150h30v30h-30zM210 150h30v30h-30zM240 150h30v30h-30zM270 150h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff90%22 d=%22M300 150h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M330 150h30v30h-30zM360 150h30v30h-30zM390 150h30v30h-30zM420 150h30v30h-30zM450 150h30v30h-30zM480 150h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff4b%22 d=%22M510 150h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff75%22 d=%22M540 150h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M570 150h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffffae%22 d=%22M600 150h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M630 150h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff20%22 d=%22M660 150h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M690 150h30v30h-30zM720 150h30v30h-30zM750 150h30v30h-30zM780 150h30v30h-30zM810 150h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffffdf%22 d=%22M840 150h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M870 150h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffffd8%22 d=%22M900 150h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M930 150h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff49%22 d=%22M960 150h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M990 150h30v30h-30zM1020 150h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffffa2%22 d=%22M1050 150h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffffc4%22 d=%22M1080 150h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M1110 150h30v30h-30zM1140 150h30v30h-30zM1170 150h30v30h-30zM0 180h30v30H0zM30 180h30v30H30z%22%2F%3E%3Cpath fill=%22%23fffffff2%22 d=%22M60 180h30v30H60z%22%2F%3E%3Cpath fill=%22none%22 d=%22M90 180h30v30H90zM120 180h30v30h-30zM150 180h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff3e%22 d=%22M180 180h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M210 180h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff33%22 d=%22M240 180h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffffb7%22 d=%22M270 180h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff8b%22 d=%22M300 180h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff09%22 d=%22M330 180h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M360 180h30v30h-30zM390 180h30v30h-30zM420 180h30v30h-30zM450 180h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffffcb%22 d=%22M480 180h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M510 180h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff47%22 d=%22M540 180h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff51%22 d=%22M570 180h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M600 180h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffffbd%22 d=%22M630 180h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M660 180h30v30h-30zM690 180h30v30h-30zM720 180h30v30h-30zM750 180h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffffc5%22 d=%22M780 180h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M810 180h30v30h-30zM840 180h30v30h-30zM870 180h30v30h-30zM900 180h30v30h-30zM930 180h30v30h-30zM960 180h30v30h-30zM990 180h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff46%22 d=%22M1020 180h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M1050 180h30v30h-30zM1080 180h30v30h-30zM1110 180h30v30h-30zM1140 180h30v30h-30zM1170 180h30v30h-30zM0 210h30v30H0z%22%2F%3E%3Cpath fill=%22%23ffffff2a%22 d=%22M30 210h30v30H30z%22%2F%3E%3Cpath fill=%22%23ffffff5e%22 d=%22M60 210h30v30H60z%22%2F%3E%3Cpath fill=%22%23ffffff30%22 d=%22M90 210h30v30H90z%22%2F%3E%3Cpath fill=%22none%22 d=%22M120 210h30v30h-30zM150 210h30v30h-30zM180 210h30v30h-30zM210 210h30v30h-30zM240 210h30v30h-30zM270 210h30v30h-30zM300 210h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff30%22 d=%22M330 210h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff03%22 d=%22M360 210h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M390 210h30v30h-30zM420 210h30v30h-30zM450 210h30v30h-30zM480 210h30v30h-30zM510 210h30v30h-30zM540 210h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff73%22 d=%22M570 210h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff95%22 d=%22M600 210h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M630 210h30v30h-30zM660 210h30v30h-30zM690 210h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff6a%22 d=%22M720 210h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M750 210h30v30h-30zM780 210h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff18%22 d=%22M810 210h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffffe8%22 d=%22M840 210h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M870 210h30v30h-30zM900 210h30v30h-30zM930 210h30v30h-30zM960 210h30v30h-30zM990 210h30v30h-30zM1020 210h30v30h-30zM1050 210h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff4e%22 d=%22M1080 210h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M1110 210h30v30h-30zM1140 210h30v30h-30zM1170 210h30v30h-30zM0 240h30v30H0zM30 240h30v30H30zM60 240h30v30H60z%22%2F%3E%3Cpath fill=%22%23fffffff8%22 d=%22M90 240h30v30H90z%22%2F%3E%3Cpath fill=%22%23ffffff16%22 d=%22M120 240h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M150 240h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff7a%22 d=%22M180 240h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M210 240h30v30h-30z%22%2F%3E%3Cpath fill=%22%23fffffffb%22 d=%22M240 240h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff46%22 d=%22M270 240h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M300 240h30v30h-30zM330 240h30v30h-30zM360 240h30v30h-30zM390 240h30v30h-30zM420 240h30v30h-30zM450 240h30v30h-30zM480 240h30v30h-30zM510 240h30v30h-30zM540 240h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffffd5%22 d=%22M570 240h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M600 240h30v30h-30zM630 240h30v30h-30zM660 240h30v30h-30zM690 240h30v30h-30z%22%2F%3E%3Cpath fill=%22%23fffffff4%22 d=%22M720 240h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M750 240h30v30h-30zM780 240h30v30h-30zM810 240h30v30h-30zM840 240h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff66%22 d=%22M870 240h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M900 240h30v30h-30zM930 240h30v30h-30zM960 240h30v30h-30zM990 240h30v30h-30zM1020 240h30v30h-30zM1050 240h30v30h-30zM1080 240h30v30h-30zM1110 240h30v30h-30zM1140 240h30v30h-30zM1170 240h30v30h-30zM0 270h30v30H0zM30 270h30v30H30zM60 270h30v30H60zM90 270h30v30H90z%22%2F%3E%3Cpath fill=%22%23ffffff96%22 d=%22M120 270h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M150 270h30v30h-30zM180 270h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff91%22 d=%22M210 270h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M240 270h30v30h-30zM270 270h30v30h-30zM300 270h30v30h-30zM330 270h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff1f%22 d=%22M360 270h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M390 270h30v30h-30zM420 270h30v30h-30zM450 270h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff8a%22 d=%22M480 270h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M510 270h30v30h-30zM540 270h30v30h-30zM570 270h30v30h-30zM600 270h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffffd9%22 d=%22M630 270h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M660 270h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffffac%22 d=%22M690 270h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffffbd%22 d=%22M720 270h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M750 270h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff5e%22 d=%22M780 270h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M810 270h30v30h-30zM840 270h30v30h-30zM870 270h30v30h-30zM900 270h30v30h-30zM930 270h30v30h-30zM960 270h30v30h-30zM990 270h30v30h-30zM1020 270h30v30h-30zM1050 270h30v30h-30zM1080 270h30v30h-30zM1110 270h30v30h-30zM1140 270h30v30h-30zM1170 270h30v30h-30zM0 300h30v30H0zM30 300h30v30H30zM60 300h30v30H60zM90 300h30v30H90zM120 300h30v30h-30zM150 300h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff07%22 d=%22M180 300h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffffa1%22 d=%22M210 300h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M240 300h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff71%22 d=%22M270 300h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M300 300h30v30h-30zM330 300h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff20%22 d=%22M360 300h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M390 300h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff02%22 d=%22M420 300h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff33%22 d=%22M450 300h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M480 300h30v30h-30zM510 300h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff06%22 d=%22M540 300h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff48%22 d=%22M570 300h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M600 300h30v30h-30zM630 300h30v30h-30zM660 300h30v30h-30zM690 300h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffffc8%22 d=%22M720 300h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M750 300h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff75%22 d=%22M780 300h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M810 300h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff3a%22 d=%22M840 300h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M870 300h30v30h-30zM900 300h30v30h-30zM930 300h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff22%22 d=%22M960 300h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M990 300h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffffd9%22 d=%22M1020 300h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff31%22 d=%22M1050 300h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffffd3%22 d=%22M1080 300h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M1110 300h30v30h-30zM1140 300h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff2c%22 d=%22M1170 300h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M0 330h30v30H0zM30 330h30v30H30zM60 330h30v30H60zM90 330h30v30H90z%22%2F%3E%3Cpath fill=%22%23ffffffaa%22 d=%22M120 330h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff9f%22 d=%22M150 330h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M180 330h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff71%22 d=%22M210 330h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M240 330h30v30h-30zM270 330h30v30h-30zM300 330h30v30h-30zM330 330h30v30h-30zM360 330h30v30h-30zM390 330h30v30h-30zM420 330h30v30h-30zM450 330h30v30h-30zM480 330h30v30h-30zM510 330h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffffdb%22 d=%22M540 330h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M570 330h30v30h-30zM600 330h30v30h-30zM630 330h30v30h-30zM660 330h30v30h-30zM690 330h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff60%22 d=%22M720 330h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffffe0%22 d=%22M750 330h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M780 330h30v30h-30zM810 330h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff0f%22 d=%22M840 330h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M870 330h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffffeb%22 d=%22M900 330h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff6f%22 d=%22M930 330h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff69%22 d=%22M960 330h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffffcf%22 d=%22M990 330h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M1020 330h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff79%22 d=%22M1050 330h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff1f%22 d=%22M1080 330h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffffa3%22 d=%22M1110 330h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M1140 330h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff8c%22 d=%22M1170 330h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M0 360h30v30H0zM30 360h30v30H30zM60 360h30v30H60zM90 360h30v30H90zM120 360h30v30h-30zM150 360h30v30h-30zM180 360h30v30h-30zM210 360h30v30h-30zM240 360h30v30h-30zM270 360h30v30h-30zM300 360h30v30h-30zM330 360h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff5f%22 d=%22M360 360h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M390 360h30v30h-30zM420 360h30v30h-30zM450 360h30v30h-30zM480 360h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff43%22 d=%22M510 360h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff15%22 d=%22M540 360h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M570 360h30v30h-30zM600 360h30v30h-30zM630 360h30v30h-30zM660 360h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff6e%22 d=%22M690 360h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff0b%22 d=%22M720 360h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M750 360h30v30h-30zM780 360h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff93%22 d=%22M810 360h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M840 360h30v30h-30zM870 360h30v30h-30zM900 360h30v30h-30zM930 360h30v30h-30zM960 360h30v30h-30zM990 360h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffffdd%22 d=%22M1020 360h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M1050 360h30v30h-30zM1080 360h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffffeb%22 d=%22M1110 360h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M1140 360h30v30h-30zM1170 360h30v30h-30zM0 390h30v30H0z%22%2F%3E%3Cpath fill=%22%23ffffffbd%22 d=%22M30 390h30v30H30z%22%2F%3E%3Cpath fill=%22%23ffffffee%22 d=%22M60 390h30v30H60z%22%2F%3E%3Cpath fill=%22%23ffffffad%22 d=%22M90 390h30v30H90z%22%2F%3E%3Cpath fill=%22none%22 d=%22M120 390h30v30h-30zM150 390h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff5b%22 d=%22M180 390h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M210 390h30v30h-30zM240 390h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff2c%22 d=%22M270 390h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff75%22 d=%22M300 390h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M330 390h30v30h-30zM360 390h30v30h-30zM390 390h30v30h-30zM420 390h30v30h-30zM450 390h30v30h-30z%22%2F%3E%3Cpath fill=%22%23fffffff0%22 d=%22M480 390h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M510 390h30v30h-30zM540 390h30v30h-30zM570 390h30v30h-30zM600 390h30v30h-30zM630 390h30v30h-30zM660 390h30v30h-30zM690 390h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff05%22 d=%22M720 390h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff52%22 d=%22M750 390h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M780 390h30v30h-30zM810 390h30v30h-30zM840 390h30v30h-30zM870 390h30v30h-30zM900 390h30v30h-30zM930 390h30v30h-30z%22%2F%3E%3Cpath fill=%22%23fffffff1%22 d=%22M960 390h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M990 390h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff8f%22 d=%22M1020 390h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M1050 390h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff58%22 d=%22M1080 390h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M1110 390h30v30h-30zM1140 390h30v30h-30z%22%2F%3E%3Cpath fill=%22%23fffffffb%22 d=%22M1170 390h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M0 420h30v30H0zM30 420h30v30H30z%22%2F%3E%3Cpath fill=%22%23ffffffed%22 d=%22M60 420h30v30H60z%22%2F%3E%3Cpath fill=%22%23ffffff8e%22 d=%22M90 420h30v30H90z%22%2F%3E%3Cpath fill=%22none%22 d=%22M120 420h30v30h-30zM150 420h30v30h-30zM180 420h30v30h-30zM210 420h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff39%22 d=%22M240 420h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M270 420h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffffb0%22 d=%22M300 420h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M330 420h30v30h-30zM360 420h30v30h-30zM390 420h30v30h-30zM420 420h30v30h-30zM450 420h30v30h-30zM480 420h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff3b%22 d=%22M510 420h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff4a%22 d=%22M540 420h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M570 420h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffffe6%22 d=%22M600 420h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M630 420h30v30h-30zM660 420h30v30h-30zM690 420h30v30h-30zM720 420h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff48%22 d=%22M750 420h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M780 420h30v30h-30zM810 420h30v30h-30zM840 420h30v30h-30zM870 420h30v30h-30zM900 420h30v30h-30zM930 420h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff27%22 d=%22M960 420h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M990 420h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffffd6%22 d=%22M1020 420h30v30h-30z%22%2F%3E%3Cpath fill=%22%23fffffffe%22 d=%22M1050 420h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M1080 420h30v30h-30zM1110 420h30v30h-30zM1140 420h30v30h-30zM1170 420h30v30h-30zM0 450h30v30H0z%22%2F%3E%3Cpath fill=%22%23ffffff57%22 d=%22M30 450h30v30H30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M60 450h30v30H60zM90 450h30v30H90zM120 450h30v30h-30zM150 450h30v30h-30zM180 450h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffffe7%22 d=%22M210 450h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M240 450h30v30h-30zM270 450h30v30h-30zM300 450h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff2d%22 d=%22M330 450h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M360 450h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff3a%22 d=%22M390 450h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffffcd%22 d=%22M420 450h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M450 450h30v30h-30zM480 450h30v30h-30zM510 450h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff03%22 d=%22M540 450h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M570 450h30v30h-30zM600 450h30v30h-30zM630 450h30v30h-30z%22%2F%3E%3Cpath fill=%22%23fffffff2%22 d=%22M660 450h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M690 450h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff55%22 d=%22M720 450h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff99%22 d=%22M750 450h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff8b%22 d=%22M780 450h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M810 450h30v30h-30zM840 450h30v30h-30zM870 450h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff15%22 d=%22M900 450h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffffa1%22 d=%22M930 450h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M960 450h30v30h-30zM990 450h30v30h-30zM1020 450h30v30h-30zM1050 450h30v30h-30zM1080 450h30v30h-30zM1110 450h30v30h-30zM1140 450h30v30h-30zM1170 450h30v30h-30zM0 480h30v30H0zM30 480h30v30H30zM60 480h30v30H60zM90 480h30v30H90zM120 480h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffffef%22 d=%22M150 480h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M180 480h30v30h-30zM210 480h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff8e%22 d=%22M240 480h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M270 480h30v30h-30zM300 480h30v30h-30zM330 480h30v30h-30zM360 480h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffffaa%22 d=%22M390 480h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M420 480h30v30h-30zM450 480h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffffd8%22 d=%22M480 480h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M510 480h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff97%22 d=%22M540 480h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffffae%22 d=%22M570 480h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M600 480h30v30h-30zM630 480h30v30h-30zM660 480h30v30h-30zM690 480h30v30h-30zM720 480h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff2f%22 d=%22M750 480h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M780 480h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff6b%22 d=%22M810 480h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M840 480h30v30h-30zM870 480h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff3c%22 d=%22M900 480h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff57%22 d=%22M930 480h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M960 480h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff2f%22 d=%22M990 480h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M1020 480h30v30h-30zM1050 480h30v30h-30zM1080 480h30v30h-30zM1110 480h30v30h-30zM1140 480h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff1c%22 d=%22M1170 480h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M0 510h30v30H0z%22%2F%3E%3Cpath fill=%22%23ffffffdc%22 d=%22M30 510h30v30H30z%22%2F%3E%3Cpath fill=%22%23ffffffad%22 d=%22M60 510h30v30H60z%22%2F%3E%3Cpath fill=%22none%22 d=%22M90 510h30v30H90zM120 510h30v30h-30zM150 510h30v30h-30z%22%2F%3E%3Cpath fill=%22%23fffffffb%22 d=%22M180 510h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff44%22 d=%22M210 510h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff06%22 d=%22M240 510h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M270 510h30v30h-30zM300 510h30v30h-30zM330 510h30v30h-30zM360 510h30v30h-30zM390 510h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffffef%22 d=%22M420 510h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffffe1%22 d=%22M450 510h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffffc3%22 d=%22M480 510h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff51%22 d=%22M510 510h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff3b%22 d=%22M540 510h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff84%22 d=%22M570 510h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M600 510h30v30h-30zM630 510h30v30h-30zM660 510h30v30h-30zM690 510h30v30h-30zM720 510h30v30h-30zM750 510h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff63%22 d=%22M780 510h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M810 510h30v30h-30zM840 510h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff89%22 d=%22M870 510h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff17%22 d=%22M900 510h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M930 510h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff37%22 d=%22M960 510h30v30h-30z%22%2F%3E%3Cpath fill=%22%23fffffff0%22 d=%22M990 510h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff10%22 d=%22M1020 510h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M1050 510h30v30h-30zM1080 510h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffffbc%22 d=%22M1110 510h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M1140 510h30v30h-30zM1170 510h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff8f%22 d=%22M0 540h30v30H0z%22%2F%3E%3Cpath fill=%22none%22 d=%22M30 540h30v30H30zM60 540h30v30H60zM90 540h30v30H90zM120 540h30v30h-30zM150 540h30v30h-30zM180 540h30v30h-30zM210 540h30v30h-30zM240 540h30v30h-30zM270 540h30v30h-30zM300 540h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff06%22 d=%22M330 540h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M360 540h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffffb4%22 d=%22M390 540h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M420 540h30v30h-30zM450 540h30v30h-30zM480 540h30v30h-30zM510 540h30v30h-30zM540 540h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffffb3%22 d=%22M570 540h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff7b%22 d=%22M600 540h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M630 540h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff50%22 d=%22M660 540h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M690 540h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff0a%22 d=%22M720 540h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffffa6%22 d=%22M750 540h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M780 540h30v30h-30zM810 540h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff5a%22 d=%22M840 540h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M870 540h30v30h-30zM900 540h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff68%22 d=%22M930 540h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffffdf%22 d=%22M960 540h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff20%22 d=%22M990 540h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M1020 540h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff40%22 d=%22M1050 540h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff69%22 d=%22M1080 540h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M1110 540h30v30h-30zM1140 540h30v30h-30zM1170 540h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff83%22 d=%22M0 570h30v30H0z%22%2F%3E%3Cpath fill=%22none%22 d=%22M30 570h30v30H30z%22%2F%3E%3Cpath fill=%22%23ffffff08%22 d=%22M60 570h30v30H60z%22%2F%3E%3Cpath fill=%22none%22 d=%22M90 570h30v30H90z%22%2F%3E%3Cpath fill=%22%23ffffff61%22 d=%22M120 570h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M150 570h30v30h-30zM180 570h30v30h-30zM210 570h30v30h-30zM240 570h30v30h-30zM270 570h30v30h-30zM300 570h30v30h-30zM330 570h30v30h-30zM360 570h30v30h-30zM390 570h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff0b%22 d=%22M420 570h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M450 570h30v30h-30zM480 570h30v30h-30zM510 570h30v30h-30zM540 570h30v30h-30zM570 570h30v30h-30zM600 570h30v30h-30zM630 570h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffffc6%22 d=%22M660 570h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M690 570h30v30h-30zM720 570h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff5a%22 d=%22M750 570h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M780 570h30v30h-30zM810 570h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff2b%22 d=%22M840 570h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M870 570h30v30h-30zM900 570h30v30h-30zM930 570h30v30h-30zM960 570h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff0d%22 d=%22M990 570h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M1020 570h30v30h-30zM1050 570h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffffb7%22 d=%22M1080 570h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M1110 570h30v30h-30zM1140 570h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffffcd%22 d=%22M1170 570h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M0 600h30v30H0zM30 600h30v30H30zM60 600h30v30H60zM90 600h30v30H90z%22%2F%3E%3Cpath fill=%22%23ffffff4c%22 d=%22M120 600h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff4e%22 d=%22M150 600h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M180 600h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff53%22 d=%22M210 600h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M240 600h30v30h-30zM270 600h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffffba%22 d=%22M300 600h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff5d%22 d=%22M330 600h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff28%22 d=%22M360 600h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff11%22 d=%22M390 600h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M420 600h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff75%22 d=%22M450 600h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M480 600h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff91%22 d=%22M510 600h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffffb3%22 d=%22M540 600h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M570 600h30v30h-30zM600 600h30v30h-30zM630 600h30v30h-30zM660 600h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff8f%22 d=%22M690 600h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M720 600h30v30h-30zM750 600h30v30h-30zM780 600h30v30h-30zM810 600h30v30h-30zM840 600h30v30h-30zM870 600h30v30h-30z%22%2F%3E%3Cpath fill=%22%23fffffff3%22 d=%22M900 600h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M930 600h30v30h-30zM960 600h30v30h-30zM990 600h30v30h-30z%22%2F%3E%3Cpath fill=%22%23ffffff6c%22 d=%22M1020 600h30v30h-30z%22%2F%3E%3Cpath fill=%22none%22 d=%22M1050 600h30v30h-30zM1080 600h30v30h-30zM1110 600h30v30h-30zM1140 600h30v30h-30zM1170 600h30v30h-30z%22%2F%3E%3C%2Fg%3E%3Cdefs%3E%3CradialGradient id=%22a%22%3E%3Cstop offset=%220%22 stop-color=%22%23fff%22%2F%3E%3Cstop offset=%22100%25%22 stop-color=%22%23fff%22 stop-opacity=%220%22%2F%3E%3C%2FradialGradient%3E%3C%2Fdefs%3E%3C%2Fsvg%3E");
+  overflow: hidden;
+}
+
+.knowledge_container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2em;
+  align-items: center;
+}
+
+.knowledge_text {
+  color: aliceblue;
+}
+
+.knowledge_picture {
+  max-width: 500px;
+}
+
+.knowledge_paragraph {
+  line-height: 2;
+  margin-bottom: 15px;
+}
+.knowledge_img {
+  width: 100%;
+  display: block;
+}
+
+.knowledge_picture_admin{
+  margin: auto;
+  margin-top: -50px;
+}
+
+/*pagina login*/
+
+.login {
+  background-image: url(../Imagenes/peugeot-308-cc-1.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.mainlog {
+  width: 100%;
+  padding: 20px;
+  margin: auto;
+  margin-top: 100px;
+}
+
+.contenedor_main {
+  width: 100%;
+  max-width: 900px;
+  margin: auto;
+  position: relative;
+}
+
+.caja_trasera {
+  width: 100%;
+  padding: 0px 10px;
+  display: flex;
+  justify-content: space-around;
+  backdrop-filter: blur(10px);
+  background-color: rgba(119, 119, 119, 0.5);
+  border-radius: 45px 150px;
+}
+
+.caja_trasera div {
+  margin: 90px 40px;
+  color: beige;
+  transition: all 500ms;
+}
+.ini{
+  margin-top: 0;
+}
+.caja_trasera div p,
+.caja_trasera div button {
+  margin-top: 10px;
+}
+
+.rec{
+margin-top: 30px;
+
+}
+.caja_trasera div h3 {
+  font-size: 20px;
+}
+
+.caja_trasera button {
+  padding: 10px 40px;
+  border-radius: 15px 30px;
+  background: transparent;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  color: beige;
+  transition: all 300ms;
+}
+
+.caja_trasera button:hover {
+  background: #000000;
+  color: #000000;
+}
+
+/*formularos*/
+.contenedor_login-register {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 400px;
+  position: relative;
+  top: -180px;
+  left: 10px;
+  transition: left 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.contenedor_login-register form {
+  width: 100%;
+  padding: 90px 20px;
+  background: #fff;
+  position: absolute;
+  border-radius: 20px;
+}
+
+.contenedor_login-register form h2 {
+  font-size: 30px;
+  text-align: center;
+  margin-bottom: 20px;
+  color: rgb(85, 85, 85);
+}
+
+.contenedor_login-register form input {
+  width: 100%;
+  margin-top: 20px;
+  padding: 10px;
+  border: none;
+  background-color: #f2f2f2;
+  font-size: 15px;
+}
+
+.contenedor_login-register form button {
+  padding: 10px 40px;
+  margin-top: 40px;
+  border-radius: 15px 30px;
+  border: none;
+  font-size: 15px;
+  background-color: #f2f2f2;
+  cursor: pointer;
+  outline: none;
+}
+
+.formulario_login {
+  opacity: 1;
+  display: block;
+}
+
+.formulario_register {
+  display: none;
+}
+
+
+.btn_recuperar_2{
+  display: none;
+  visibility: hidden;
+}
+
+/*responsive*/
+
+@media screen and (max-width: 850px) {
+  .login {
+    margin-top: 50px;
+  }
+
+  .caja_trasera {
+    max-width: 350px;
+    height: 300px;
+    flex-direction: column;
+    margin: auto;
+  }
+
+  .caja_trasera div {
+    margin: 0px;
+    position: absolute;
+  }
+
+  /*formulario*/
+
+  .contenedor_login-register {
+    top: -10px;
+    left: -5px;
+    margin: auto;
+  }
+  .contenedor_login-register form {
+    position: relative;
+  }
+
+
+}
+
+/*catalogo*/
+.catalogo {
+  max-width: 80%;
+  margin: auto;
+  height: 80%;
+  position: relative;
+  padding-top: 50px;
+  display: flex;
+  gap: 1.5;
+}
+
+.viñetas {
+  min-width: 70%;
+  width: 100%;
+  height: 80%;
+  margin: 30px auto;
+  transition: 0.5 ease;
+  position: center;
+  overflow-y:scroll ;
+}
+
+.viñetas .fila {
+  columns: auto;
+  justify-content: space-around;
+  margin-bottom: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  
+}
+
+.viñetas .fila .item {
+  padding: 1.4rem;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 15px 30px;
+  transition: 0.3s;
+  margin: 0.4rem;
+}
+
+.viñetas .fila .item:hover {
+  background-color: #75888a;
+  color: #f2f2f2;
+  transition-duration: 1s;
+  
+}
+
+.viñetas .fila .item img {
+  width: 200px;
+  height: 150px;
+  margin: 15px 30px;
+  align-self: auto;
+}
+
+.viñetas .fila .item .descripcion_vehiculo {
+  color: #515155;
+  font-weight: bold;
+}
+
+.viñetas .fila .item .precio {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.seleccion {  
+  align-content: space-around;
+  min-width: 0px;
+  transition: 0.5s ease;
+  opacity: 0;
+  width: 0%;
+  border: none;
+  overflow: hidden; 
+}
+.Alquiler_vehiculo{
+  align-content: space-around;
+  min-width: 0px;
+  transition: 0.5s ease;
+  opacity: 1;
+  width: 100%;
+  border: none;
+  overflow: hidden; 
+}
+
+.cerrar {
+  position: absolute;
+  right: 10px;
+  top: 110px;
+  cursor: pointer;
+}
+
+.main_agregar_vehiculo{
+  display:grid;
+  width: 100%;
+}
+
+.info {
+  padding: 20px;
+}
+
+.info img {
+  display: flex;
+  margin: auto;
+  width: 80%;
+}
+
+.info h2 {
+  color: #515155;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.info p {
+  font: 15px;
+  color: #515155;
+  margin: 15px;
+}
+
+.info .precio {
+  font-size: 30px;
+  font-weight: blod;
+  color: #000000;
+  margin: 15px;
+  display: block;
+}
+
+.info .fila {
+  padding:10px 10px;
+  display: flex;
+  align-items: flex-end;
+}
+
+.info .fila label {
+  display: block;
+  margin-bottom: 15px;
+}
+
+.info .fila select {
+  width: 100px;
+  font-size: 20px;
+  padding: 8px;
+  margin-right: 30px;
+}
+
+.info .fila button {
+  height: 40px;
+  border: none;
+  margin-bottom: 15px 30px;
+  padding: 0 10px;
+  color: #f2f2f2;
+  background-color: #4b4949;
+}
+
+
+/*administracion*/
+
+.administracion{
+  max-width: 90%;
+  min-height: 60%;
+  width: 100%;
+  margin: 50px auto;
+  position: relative;
+  display: flex;
+  gap: 1.5em;
+  overflow: auto;
+ 
+}
+
+.contenedor_administracion{
+  width: 90%;
+  transition: 0.5 ease;
+  position: absolute;   
+}
+
+.retorno_mysql{
+  margin: auto;
+  height: 90%;
+  width: 90%;
+  position: relative;
+  border-style: solid;
+  border-radius: 15px 30px;
+  margin-bottom: 2em ;
+  
+}
+
+
+.btn_sql{
+  border: none;
+  margin: 30px;
+  padding: 8px 40px;
+  border-radius: 15px 30px;
+  background: grey;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  color: beige;
+  transition: all 300ms;
+  text-decoration: none;
+}
+
+.btn_sql_tabla{
+  border: none;
+  margin: 50px 150px;
+  margin-bottom: 50px;
+  padding: 8px 40px;
+  border-radius: 15px 30px;
+  background: grey;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  color: beige;
+  transition: all 300ms;
+  text-decoration: none;
+
+}
+
+.caja_usuarios{
+  text-align: center;
+  min-width: 100px;
+  min-height: 100px;
+  max-height: 200px;
+  margin: 50px;
+  border-color: rgb(41, 39, 39);
+  border-width: 5px;
+  border-style: solid;
+  border-radius: 15px 30px;
+  overflow: auto;
+}
+.caja_usuarios_1{
+  text-align: center;
+  margin-bottom: 50px;
+  background-color:white ;
+  border-color: rgb(41, 39, 39);
+  border-width: 5px;
+  border-style: solid;
+  margin-bottom: 20px;
+}
+
+.enunciado{
+  position: sticky;
+  top: 0;
+}
+
+.caja_usuarios_imagen{
+  max-width: 200px;
+  border-color: rgb(41, 39, 39);
+  border-width: 5px;
+  border-style: solid;
+  border-radius: 15px 30px;
+}
+
+
+.editar{
+  display: flex;
+  min-height: 29%;
+  align-items: space-around;
+  max-width: 90%;
+  position: relative;
+  margin: auto;
+  border: none;
+  border-radius: 15px 30px;
+}
+
+.form_editar{
+  position: relative;
+  border: none;
+  border-radius: 15px 30px;
+  
+}
+
+.form_editar h2{
+  align-items: end;
+}
+
+.form_editar input {
+  border-radius: 5px ;
+  margin: 15px auto;
+}
+
+.administrador{
+  width: 100%;
+  display: flex;
+}
+
+.btn_sql_admin{
+  border: none;
+  margin: 30px;
+  padding: 8px 40px;
+  border-radius: 15px 30px;
+  background: grey;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  color: beige;
+  transition: all 300ms;
+  text-decoration: none;
+}
+/*reloj*/
+p{
+  margin: 0;
+  padding: 0;
+}
+.reloj{
+  color: #000000;
+  text-align: center;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  text-shadow: 0 0 20px rgba(10,175, 230,1), 0 0 20px rgba(10,175, 230,0) ;
+}
+
+
+.tiempo{
+  letter-spacing: 0.05em;
+  font-size: 80px;
+  padding: 5px 0;
+}
+.fecha{
+  letter-spacing: 0.1em;
+  font-size: 24px;
+}
+/*alquiler*/
+
+.main_editar_vehiculo{
+display: grid;
+width: 100%;
+padding: 20px;
+}
+.editar_vehiculo_mysql{
+  padding: 10px 0em;
+  width: 100%;
+}
+
+.form_editar_vehiculo{
+  margin: 30px 30px;
+  padding: 40px;
+}
+
+.cuadro_editar{
+  margin: 30px;
+  padding: 8px 20px;
+  border-radius: 15px 30px;
+  background: white;
+  font-size: 14px;
+  font-weight: 600;
+  color: black;
+}
+
+.main_agregar_vehiculo{
+  width: 90%;
+  display: flex;
+  margin: auto;
+}
+
+.cuadro_busqueda{
+  border-radius: 15px 30px;
+}
+
+.usuarios_formato{
+  display: grid;
+  grid-template-columns: 1fr 1fr1;
+}
+.img_usuario {
+  width: 200px;
+  height: 250px;
+  position: center;
+}
+.info_usuario{
+  border-radius: 15px 30px;
+  
+}
