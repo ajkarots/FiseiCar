@@ -762,6 +762,15 @@ padding: 20px;
   width: 200px;
   height: 250px;
   position: center;
+  border-radius: 50%;
+}
+
+.img_usuario_editar{
+  width: 200px;
+  height: 250px;
+  position: center;
+  margin-right: 40px;
+  border-radius: 50%;
 }
 .info_usuario{
   border-radius: 15px 30px;

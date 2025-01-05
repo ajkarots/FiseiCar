@@ -55,7 +55,7 @@ if(!isset($_SESSION['usuario'])){
                 </article>
         </section>
             </div>
-            <div>                    <a href="" class="btn_sql">Editar</a>
+            <div>                    <a href="./editar_perfil.php" class="btn_sql">Editar</a>
             <a href="./historial_usuario.php" class="btn_sql">Historial de alquiler</a></div>
         </section>
         <section class="knowledge">
