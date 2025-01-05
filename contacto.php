@@ -28,9 +28,10 @@ if(!isset($_SESSION['usuario'])){
         </div>
         <ul class="nav_link nav_link--menu">
             <li class="nav_items">
+            <?php if($id!=null) { ?>
                 <a href="./home.php" class="nav_links">Inicio</a>
-            </li>
-            <?php if($id=null) { ?>
+            </li> <?php } ?>
+            <?php if($id==null) { ?>
                 <li class="nav_items">
                     <a href="./login.php" class="nav_links">Accede</a>
                 </li> <?php } ?>
@@ -38,7 +39,11 @@ if(!isset($_SESSION['usuario'])){
                 <li class="nav_items">
                     <a href="./funciones/salir.php" class="nav_links">Salir </a>
                 </li> <?php } ?>
+                <?php if($id!=null) { ?>
+                <li class="nav_items">
                 <a href="./usuario.php" class="usuario"><?php echo $usuario['nombre']?></a>
+                </li> <?php } ?>
+               
         </ul>
     </nav>
 </header>
