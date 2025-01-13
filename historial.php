@@ -42,16 +42,19 @@ $sql ="SELECT * FROM `usuarios` WHERE `id` = '$id'";
 
             <div class="contenedor_administracion">
                     <table class="retorno_mysql" >
-                        <tr>
-                            <td>Usuario que alquila</td>
-                            <td>Vehículo alquilado</td>
-                            <td>Días alquilados</td>
-                            <td>Precio/Día</td>
-                            <td>Total</td>
+                        <tr class="enunciado">
+                            <td class="caja_usuarios_1">Usuario que alquila</td>
+                            <td class="caja_usuarios_1">Vehículo alquilado</td>
+                            <td class="caja_usuarios_1">Días alquilados</td>
+                            <td class="caja_usuarios_1">Precio/Día</td>
+                            <td class="caja_usuarios_1">Alquiler</td>
+                            
+                            
                         </tr>
                         <tr>
                         <?php
                         include 'conexion.php';
+                        $total=0;
                         $sql ="SELECT * FROM `alquileres`";
                         $result = mysqli_query($conexion,$sql);
                         while($tabla = mysqli_fetch_array($result)){
@@ -59,27 +62,38 @@ $sql ="SELECT * FROM `usuarios` WHERE `id` = '$id'";
                             $result2 = mysqli_query($conexion,$sql);
                             $usuario = $result2->fetch_assoc();
 
-                            $sql2 ="SELECT marca FROM vehiculos WHERE id='$tabla[vehiculo_alquilado]'";
+                            $sql2 ="SELECT * FROM vehiculos WHERE id='$tabla[vehiculo_alquilado]'";
                             $result3 = mysqli_query($conexion,$sql2);
                             $usuario2 = $result3->fetch_assoc();
                         ?>    
                         <tr>
-                            
                             <td class="caja_usuarios"><?php echo $usuario['nombre'] ?></td>
-                            <td class="caja_usuarios"><?php echo $usuario2 ['marca'] ?></td>
+                            <td class="caja_usuarios"><?php echo $usuario2 ['marca']  ?> <?php echo $usuario2 ['modelo']  ?></td>
                             <td class="caja_usuarios"><?php echo $tabla ['dias'] ?></td>
                             <td class="caja_usuarios"><?php echo $tabla ['precio'] ?></td>
                             <td class="caja_usuarios"><?php echo $tabla ['venta'] ?></td>
-                            
+                            <td><a href="./facturaPostAdmin.php?idAlquiler=<?php echo $tabla ['ID'] ?>&idVehiculo=<?php echo $tabla ['vehiculo_alquilado'] ?>" class="btn_sql" id="btn_factura" >Generar factura</a></td>
                             <td><a href="./funciones/eliminar_registro.php?id=<?php echo $tabla ['ID'] ?>" class="btn_sql" id="btn_eliminar">Eliminar</a></td>
                         </tr>
                         <?php
+                        $total = $total+$tabla ['venta'] ;
                         }
-                        ?>       
+                        ?>  
+                                                <td></td>
+                        <td></td>
+                        <td></td>
+                        <td >Total:</td> 
+                        <td class="caja_usuarios"><?php echo$total?> USD</td>     
                         </tr>
                     </table>
-                <a href="./administrador.php" class="btn_sql" id="btn_vehiculos">Volver</a>
+                    
             </div>
+            <div>
+                
+            </div>
+        </section>
+        <section>
+        <a href="./administrador.php" class="btn_sql_tabla" id="btn_vehiculos">Volver</a>
         </section>
         <section class="knowledge">
             <div class="knowledge_container container">

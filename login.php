@@ -43,13 +43,14 @@
                             <input type="password" placeholder="Contraseña" name="ingre_cont" id="ingre_cont">
                             <button name="btn_entrar" id="btn_entrar" type="submit" value="Entrar">Entrar</button>
                             <button class="btn_recuperar_2" name="btn_recuperar_2" id="btn_recuperar_2" type="submit" value="Recuperar">Recuperar</button>
+
                         </form>
                         <form id="Formulario2" action="./funciones/registro_usuario.php" method="POST" class="formulario_register">
                             <h2>Resgistrarse</h2>
                             <input type="text" placeholder="Nombre completo" name="nombre" id="nombre">
                             <input type="email" placeholder="Correo electronico" name="correo" id="correo">
                             <input type="password" placeholder="Contraseña" name="clave" id="clave">
-                            <button id="Registrarse">Registrarse</button>
+                            <button id="Registrarse" type="submit">Registrarse</button>
                         </form>
                     </div>
         </div>

@@ -14,7 +14,7 @@
         box_marcas.addEventListener('change', e => {
             const valor = box_marcas.value;
             switch (valor) {
-                case 'toyota':
+                case 'Toyota':
                     box_modelos.innerHTML = `<option value="aygo">Toyota Aygo</option>
                     <option value="yaris">Toyota Yaris</option>
                     <option value="yaris-cross">Toyota Yaris Cross</option>
@@ -43,7 +43,7 @@
                     <option value="fortuner">Toyota Fortuner</option>
                     <option value="proace-ev">Toyota Proace EV (eléctrico)</option>`;
                     break;
-                case 'ford':
+                case 'Ford':
                     box_modelos.innerHTML = `  <option value="fiesta">Ford Fiesta</option>
                     <option value="focus">Ford Focus</option>
                     <option value="mustang">Ford Mustang</option>
@@ -75,7 +75,7 @@
                     <option value="fairlane">Ford Fairlane</option>
                     <option value="zephyr">Ford Zephyr</option>`;
                     break;
-                case 'chevrolet':
+                case 'Chevrolet':
                     box_modelos.innerHTML=` <option value="spark">Chevrolet Spark</option>
                     <option value="aveo">Chevrolet Aveo</option>
                     <option value="sonic">Chevrolet Sonic</option>
@@ -104,7 +104,7 @@
                     <option value="niva">Chevrolet Niva</option>
                     <option value="spark-ev">Chevrolet Spark EV (eléctrico)</option>`;
                     break;
-                case 'honda':
+                case 'Honda':
                     box_modelos.innerHTML=`  <option value="fit">Honda Fit</option>
                     <option value="civic">Honda Civic</option>
                     <option value="accord">Honda Accord</option>
@@ -133,7 +133,7 @@
                     <option value="acura-mdx">Acura MDX (marca premium de Honda)</option>
                     <option value="acura-rdx">Acura RDX (marca premium de Honda)</option>`;
                     break;
-                case 'bmw':
+                case 'BMW':
                     box_modelos.innerHTML=`  <option value="serie-1">BMW Serie 1</option>
                     <option value="serie-2">BMW Serie 2</option>
                     <option value="serie-3">BMW Serie 3</option>
@@ -175,7 +175,7 @@
                     <option value="bmw-x6-m">BMW X6 M</option>
                     <option value="bmw-x7-m">BMW X7 M</option>`;
                     break;
-                case 'audi':
+                case 'Audi':
                     box_modelos.innerHTML=`  <option value="a1">Audi A1</option>
                     <option value="a3">Audi A3</option>
                     <option value="a4">Audi A4</option>
@@ -222,7 +222,7 @@
                     <option value="a3-hybrid">Audi A3 Hybrid</option>
                     <option value="a6-hybrid">Audi A6 Hybrid</option>`;
                     break;
-                case 'mercedes':
+                case 'Mercedes':
                     box_modelos.innerHTML=`  <option value="a-klasse">Mercedes-Benz A-Class</option>
                     <option value="b-klasse">Mercedes-Benz B-Class</option>
                     <option value="c-klasse">Mercedes-Benz C-Class</option>
@@ -257,7 +257,7 @@
                     <option value="citan">Mercedes-Benz Citan</option>
                     <option value="mercedes-benz-v-klasse">Mercedes-Benz V-Klasse</option>`;
                     break;
-                case 'volkswagen':
+                case 'Volkswagen':
                     box_modelos.innerHTML=`<option value="up">Volkswagen Up!</option>
                     <option value="polo">Volkswagen Polo</option>
                     <option value="golf">Volkswagen Golf</option>
@@ -288,7 +288,7 @@
                     <option value="california">Volkswagen California</option>
                     <option value="crafter">Volkswagen Crafter</option>`;
                     break;
-                case 'nissan':
+                case 'Nissan':
                     box_modelos.innerHTML = ` <option value="micra">Nissan Micra</option>
                     <option value="juke">Nissan Juke</option>
                     <option value="leaf">Nissan Leaf (eléctrico)</option>
@@ -315,7 +315,7 @@
                     <option value="armada-platinum">Nissan Armada Platinum</option>
                     <option value="nissan-z">Nissan Z</option>`;
                     break;
-                case 'kia':
+                case 'Kia':
                     box_modelos.innerHTML=`  <option value="picanto">Kia Picanto</option>
                     <option value="rio">Kia Rio</option>
                     <option value="ceed">Kia Ceed</option>
@@ -339,7 +339,7 @@
                     <option value="sportage-hybrid">Kia Sportage Hybrid</option>
                     <option value="sportage-phev">Kia Sportage PHEV (híbrido enchufable)</option>`;
                     break;
-                case 'mazda':
+                case 'Mazda':
                     box_modelos.innerHTML=`  <option value="mazda2">Mazda2</option>
                     <option value="mazda3">Mazda3</option>
                     <option value="mazda6">Mazda6</option>
@@ -360,7 +360,7 @@
                     <option value="mazda-mazda6-phev">Mazda6 PHEV (híbrido enchufable)</option>
                     <option value="mazda-bt-50">Mazda BT-50 (pickup)</option>`;
                     break;
-                case 'hyundai':
+                case 'Hyundai':
                     box_modelos.innerHTML=`  <option value="i10">Hyundai i10</option>
                     <option value="i20">Hyundai i20</option>
                     <option value="i30">Hyundai i30</option>
@@ -393,7 +393,7 @@
                     <option value="santro">Hyundai Santro</option>
                     <option value="tucson-2022">Hyundai Tucson 2022</option>`;
                     break;
-                case 'jeep':
+                case 'Jeep':
                     box_modelos.innerHTML=`  <option value="cherokee">Jeep Cherokee</option>
                     <option value="compass">Jeep Compass</option>
                     <option value="grand-cherokee">Jeep Grand Cherokee</option>
@@ -426,7 +426,7 @@
                     <option value="wrangler-sport">Jeep Wrangler Sport</option>
                     <option value="renegade-sport">Jeep Renegade Sport</option>`;
                     break;
-                case 'subaru':
+                case 'Subaru':
                     box_modelos.innerHTML=`  <option value="impreza">Subaru Impreza</option>
                     <option value="outback">Subaru Outback</option>
                     <option value="legacy">Subaru Legacy</option>
@@ -463,7 +463,7 @@
                     <option value="solterra-touring">Subaru Solterra Touring (eléctrico)</option>
                     <option value="brz-touring">Subaru BRZ Touring</option>`;
                     break;
-                case 'peugeot':
+                case 'Peugeot':
                     box_modelos.innerHTML = `<option value="108">Peugeot 108</option><option value="208">Peugeot 208</option>
                     <option value="2008">Peugeot 2008</option>
                     <option value="3008">Peugeot 3008</option>
@@ -493,7 +493,7 @@
                     <option value="satellis">Peugeot Satellis</option>
                     <option value="vibrance">Peugeot Vibrance</option>`;
                     break;
-                case 'suzuki':
+                case 'Suzuki':
                     box_modelos.innerHTML=`    <option value="swift">Suzuki Swift</option>
                     <option value="vitara">Suzuki Vitara</option>
                     <option value="s-cross">Suzuki S-Cross</option>

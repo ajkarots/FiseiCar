@@ -10,7 +10,7 @@ $precio = $_POST['precio_editar'];
 $combustible = $_POST['combustible_editar'];
 $asientos = $_POST['asientos_editar'];
 $transmision = $_POST['transmision_editar'];
-echo '$modelo';
+
 $query = "INSERT INTO vehiculos(marca, modelo, tipo, descripcion, imagen, caballos, precio, Combustible,Asientos,Transmision) 
 VALUES ('$marca','$modelo','$tipo','$descripcion','./Imagenes/$img','$caballos','$precio','$combustible','$asientos','$transmision')";
 

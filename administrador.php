@@ -39,9 +39,13 @@ $sql ="SELECT * FROM `usuarios` WHERE `id` = '$id'";
                 <a href="./home.php" class="nav_links">Inicio</a>
             </li>
             <li class="nav_items">
+                <a href="./catalogo.php" class="nav_links">catalogo</a>
+            </li>
+            <li class="nav_items">
                 <a href="./funciones/salir.php" class="nav_links">salir</a>
             </li>
         </ul>
+        <a href="./usuario.php" class="usuario"><?php echo $usuario['nombre']?></a>
     </nav>
 </header>
 <body>
@@ -56,7 +60,7 @@ $sql ="SELECT * FROM `usuarios` WHERE `id` = '$id'";
                 <a href="./vehiculos.php" class="btn_sql_admin" id="btn_vehiculos">Vehículos</a>
                 <a href="./usuarios.php" class="btn_sql_admin" id="btn_usuarios">Usuarios</a>
                 <a href="./historial.php" class="btn_sql_admin" id="btn_historial">Historial Alquileres</a>
-                <a href="./fallas.php" class="btn_sql_admin" id="btn_falla">Historial Fallas</a>
+                <a href="./fallas.php" class="btn_sql_admin" id="btn_falla">Devoluciones</a>
             </div>
 
 

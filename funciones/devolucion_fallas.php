@@ -1,17 +1,35 @@
 <?php
 include 'conexion.php';
+
 date_default_timezone_set('America/Guayaquil');
-$fechaActual = date("d-m-Y");
+$fechaActual = date("Y-m-d");
+
 $usuario_falla = $_POST['usuario_falla'];
 $id = $_POST['id'];
 $estado = $_POST['estado'];
-$descripion_falla = $_POST['descripcion_falla'];
-$query2= "INSERT INTO devoluciones (vehiculo, usuario, estado, descripcion_falla, fecha) VALUES ('$id','$usuario_falla','$estado','$descripion_falla','$fechaActual')";
+$descripcion_falla = $_POST['descripcion_falla'];
+$excesoVelocidad = intval($_POST['excesoVelocidad']);
+$estacionamientoProhibido =intval($_POST['estacionamientoProhibido']);
+$cinturon =intval($_POST['cinturon']);
+$lugaresNoPermitidos =intval($_POST['lugaresNoPermitidos']);
+$multas=$excesoVelocidad+$estacionamientoProhibido+$cinturon+$lugaresNoPermitidos;
 
-if($conexion->query($query2)===true){
+
+$query = "UPDATE vehiculos SET reservado ='0' WHERE id ='$id'";
+
+$query2 = "INSERT INTO devoluciones (usuario, vehiculo, estado, descripcion_falla, fecha, excesoVelocidad, cinturonSeguridad, estacionamiento, lugaresNoPermitidos)
+VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+
+// Ejemplo en PHP usando PDO para prevenir inyección SQL
+$stmt = $conexion->prepare($query2);
+$stmt->bind_param("sssssssss",$usuario_falla, $id , $estado, $descripcion_falla, $fechaActual, $excesoVelocidad, $cinturon, $estacionamientoProhibido, $lugaresNoPermitidos);
+
+
+
+if($stmt->execute()===true && $conexion->query($query) === TRUE){
     echo '
     <script>
-    alert("Vehiculo disponible");
+    alert("Vehiculo disponible  ");
     window.location = "./Proyecto%20autos/devolver.php";
     </script>
 '; 

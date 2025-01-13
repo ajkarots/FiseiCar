@@ -69,7 +69,7 @@ $sql ="SELECT * FROM `usuarios` WHERE `id` = '$id'";
                             <td class="caja_usuarios"><?php echo $vehiculo ['modelo'] ?></td>
                             <td class="caja_usuarios"><?php echo $vehiculo ['tipo'] ?></td>
                             <td class="caja_usuarios"><?php echo $vehiculo ['descripcion'] ?></td>
-                            <td class="caja_usuarios"><?php echo $vehiculo ['imagen'] ?></td>
+                            <td class="caja_usuarios"> <img class="caja_usuarios_imagen" src="<?php echo $vehiculo ['imagen'] ?>" alt=""></td>
                             <td class="caja_usuarios"><?php echo $vehiculo ['caballos'] ?></td>
                             <td class="caja_usuarios"><?php echo $vehiculo ['precio'] ?></td>
                             <td class="caja_usuarios"><?php echo $vehiculo ['Combustible'] ?></td>
@@ -85,23 +85,26 @@ $sql ="SELECT * FROM `usuarios` WHERE `id` = '$id'";
             <form class="form_editar_vehiculo" action="./funciones/editar_vehiculo_sql.php" method="POST" id="formulario_editar_vehiculo">
                 <br></br>
                 <h2>Editar</h2>
+                <h5>Marca</h5>
                 <select class="btn_sql" name="box_marcas" id="box_marcas">
-                    <option value="toyota">Toyota</option>
-                    <option value="ford">Ford</option>
-                    <option value="chevrolet">Chevrolet</option>
-                    <option value="honda">Honda</option>
-                    <option value="bmw">BMW</option>
-                    <option value="audi">Audi</option>
-                    <option value="mercedes">Mercedes-Benz</option>
-                    <option value="volkswagen">Volkswagen</option>
-                    <option value="nissan">Nissan</option>
-                    <option value="kia">Kia</option>
-                    <option value="mazda">Mazda</option>
-                    <option value="hyundai">Hyundai</option>
-                    <option value="jeep">Jeep</option>
-                    <option value="subaru">Subaru</option>
-                    <option value="peugeot">Peugeot</option>
+                    <option value="Toyota">Toyota</option>
+                    <option value="Ford">Ford</option>
+                    <option value="Chevrolet">Chevrolet</option>
+                    <option value="Honda">Honda</option>
+                    <option value="BMW">BMW</option>
+                    <option value="Audi">Audi</option>
+                    <option value="Mercedes">Mercedes-Benz</option>
+                    <option value="Volkswagen">Volkswagen</option>
+                    <option value="Nissan">Nissan</option>
+                    <option value="Kia">Kia</option>
+                    <option value="Mazda">Mazda</option>
+                    <option value="Hyundai">Hyundai</option>
+                    <option value="Jeep">Jeep</option>
+                    <option value="Subaru">Subaru</option>
+                    <option value="Peugeot">Peugeot</option>
+                    <option value="Suzuki">Suzuki</option>
                 </select>
+                <h5>Modelo</h5>
                 <select class="btn_sql" name="box_modelos" id="box_modelos">
                 <option value="aygo">Toyota Aygo</option>
                     <option value="yaris">Toyota Yaris</option>
@@ -131,12 +134,17 @@ $sql ="SELECT * FROM `usuarios` WHERE `id` = '$id'";
                     <option value="fortuner">Toyota Fortuner</option>
                     <option value="proace-ev">Toyota Proace EV (eléctrico)</option>
                 </select>
+                <h5>Tipo</h5>
                 <select class="btn_sql" name="tipo_vehiculo" id="tipo_vehiculo">
                     <option value="Turismo">Turismo</option>
                     <option value="SUV">Suv</option>
                     <option value="Deportivo">Deportivo</option>
                 </select>
-                <input class="cuadro_editar" type="text" placeholder="descripcion" id="descripcion_editar" name="descripcion_editar" value="<?php echo $vehiculo['descripcion']?>">
+                <h5>Descripcion</h5>
+                <br>
+                <textarea class="editar_descripcion" type="text" placeholder="<?php echo $vehiculo['descripcion']?>" id="descripcion_editar" name="descripcion_editar"></textarea>
+                <br>
+                <h5>Imagen</h5>
                 <input class="cuadro_editar" type="file" placeholder="ruta imagen" id="img_editar" name="img_editar" accept="image/*" value="<?php echo $vehiculo['imagen']?>">
                 <h5>Caballos</h5>
                 <input class="cuadro_editar" type="number" placeholder="caballos" id="caballos_editar" name="caballos_editar" value="<?php echo $vehiculo['caballos']?>" min="0">
@@ -156,6 +164,7 @@ $sql ="SELECT * FROM `usuarios` WHERE `id` = '$id'";
                     <option value="automatica">Transmision: Automatica</option>
                 </select>
                 <input type="hidden" id="id" value="<?php echo $id; ?>" name="id">
+                <br>
                 <button type="submit" class="btn_sql" id="btn_guardar">Guardar</button>
                 <a href="./vehiculos.php" class="btn_sql" id="btn_cancelar">Cancelar</a>
             </form>

@@ -11,8 +11,8 @@ if(!isset($_SESSION['usuario'])){
     session_destroy();
     die();
 }
-$id=$_SESSION['usuario'];
-$sql ="SELECT * FROM `usuarios` WHERE `id` = '$id'";
+$id_usuario=$_SESSION['usuario'];
+$sql ="SELECT * FROM `usuarios` WHERE `id` = '$id_usuario'";
                 $result = mysqli_query($conexion,$sql);
                 $usuario = $result->fetch_assoc();
                 mysqli_close($conexion);
@@ -45,6 +45,13 @@ $sql ="SELECT * FROM `usuarios` WHERE `id` = '$id'";
             $sql = "SELECT * FROM vehiculos WHERE `id` = '$id'";
             $result = mysqli_query($conexion, $sql);
             $vehiculo = $result->fetch_assoc();
+            
+
+            $sql2 = "SELECT * FROM alquileres WHERE vehiculo_alquilado = '$id' ORDER BY inicio DESC LIMIT 1";
+            $result2 = mysqli_query($conexion, $sql2);
+            $alquiler = $result2->fetch_assoc();
+
+            $usuario_alquiler=$alquiler['usuario_alquiler'];
             mysqli_close($conexion);
             echo '<h2> ' . $vehiculo['marca'] . '</h2>';
             echo '<h2> ' . $vehiculo['modelo'] . '</h2>';
@@ -52,31 +59,25 @@ $sql ="SELECT * FROM `usuarios` WHERE `id` = '$id'";
                         <div>   
             <table class="editar_vehiculo_mysql" >
                         <tr>
-                            <td>Marca</td>
-                            <td>Modelo</td>
+                            <td></td>
                             <td>Tipo</td>
-                            <td>Descripcion</td>
-                            <td>imagen</td>
                             <td>Caballos</td>
                             <td>Precio/dia</td>
                             <td>Combustible</td>
                             <td>Asientos</td>
                             <td>Transmision</td>
                         </tr>
+                        
                         <tr>
-                        <tr>
-                            <td class="caja_usuarios"><?php echo $vehiculo ['marca'] ?></td>
-                            <td class="caja_usuarios"><?php echo $vehiculo ['modelo'] ?></td>
+                            <td ><img class="caja_usuarios" src="<?php echo $vehiculo ['imagen'] ?>" alt=""></td>
                             <td class="caja_usuarios"><?php echo $vehiculo ['tipo'] ?></td>
-                            <td class="caja_usuarios"><?php echo $vehiculo ['descripcion'] ?></td>
-                            <td class="caja_usuarios"><?php echo $vehiculo ['imagen'] ?></td>
                             <td class="caja_usuarios"><?php echo $vehiculo ['caballos'] ?></td>
                             <td class="caja_usuarios"><?php echo $vehiculo ['precio'] ?></td>
                             <td class="caja_usuarios"><?php echo $vehiculo ['Combustible'] ?></td>
                             <td class="caja_usuarios"><?php echo $vehiculo ['Asientos'] ?></td>
                             <td class="caja_usuarios"><?php echo $vehiculo ['Transmision'] ?></td>
                         </tr>      
-                        </tr>
+                        
                     </table>
                     </div> 
                     <div>
@@ -85,32 +86,55 @@ $sql ="SELECT * FROM `usuarios` WHERE `id` = '$id'";
             <form class="form_editar_vehiculo" action="./funciones/devolucion_fallas.php" method="POST" id="formulario_devolver_vehiculo">
                 <br></br>
                 <h2>Devolver</h2>
+                
                 <select class="btn_sql" name="usuario_falla" id="usuario_falla">
                     <?php
+                    
                 include 'conexion.php';
-                $sql = "SELECT id,nombre FROM usuarios";
+                $sql = "SELECT id,nombre FROM usuarios where id='$usuario_alquiler'";
                 $result = $conexion->query($sql);
                 // Verificar si hay resultados
                 if ($result->num_rows > 0) {
                     // Salida de cada fila
                     while($row = $result->fetch_assoc()) {
+                        
                         $idusuario = $row['id'];
                         echo '<option value="'.$idusuario.'">'.$row['nombre'].'</option>';
                     }
                 } else {
-                    echo "No hay vehículos disponibles.";
+                    echo "No hay usuarios disponibles.";
                 }
 
                 // Cerrar conexión
                 $conexion->close();
                 ?>
                 </select>
+                <br><br>
+                <h3>Multas</h3>
+                <input type="checkbox" name="excesoVelocidad" id="excesoVelocidad" value="100">
+                <label for="excesoVelocidad">Exceso de Velocidad</label>
+                <br>
+                <input type="checkbox" name="estacionamientoProhibido" id="estacionamientoProhibido" value="30">
+                <label for="estacionamientoProhibido">Estacionamiento Prohibido</label>
+                <br>
+                <input type="checkbox" name="cinturon" id="cinturon" value="60">
+                <label for="cinturon">Cinturon de seguridad</label>
+                <br>
+                <input type="checkbox" name="lugaresNoPermitidos" id="lugaresNoPermitidos" value="50">
+                <label for="lugaresNoPermitidos">Circular en lugares no permitidos</label>
+                <br>
+                <br>
+                <h3>Reporte</h3>
                 <select class="btn_sql" name="estado" id="estado">
                     <option value="Observacion">Observacion</option>
                     <option value="Falla">Falla</option>
+                    <option value="Ninguno">Ninguno</option>
                 </select>
-                <input class="cuadro_editar" type="text" placeholder="descripcion_falla" id="descripcion_falla" name="descripcion_falla" >
+                <br><br>
+                <h3>Descripcion del reporte</h3>
+                <input class="cuadro_editar" type="text" placeholder="Reporte" id="descripcion_falla" name="descripcion_falla" >
                 <input type="hidden" id="id" value="<?php echo $id; ?>" name="id">
+                <br>
                 <button type="submit" class="btn_sql" id="btn_guardar">Guardar</button>
                 <a href="./vehiculos.php" class="btn_sql" id="btn_cancelar">Cancelar</a>
             </form>

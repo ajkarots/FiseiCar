@@ -398,6 +398,9 @@ margin-top: 30px;
 }
 
 /*catalogo*/
+.filtros{
+  margin-left: 100px;
+}
 .catalogo {
   max-width: 80%;
   margin: auto;
@@ -548,7 +551,37 @@ margin-top: 30px;
   background-color: #4b4949;
 }
 
+/*Facturacion*/
 
+.Facturacion{
+  max-width: 90%;
+  min-height: 60%;
+  width: 100%;
+  margin: 50px auto;
+  position: relative;
+  display: flex;
+  gap: 1.5em;
+  overflow: auto;
+}
+
+.contenedor_facturacion{
+  width: 90%;
+  transition: 0.5 ease;
+  position: absolute;   
+  display: grid;
+  grid-template-columns:5fr 7fr 0fr;
+}
+
+.tabla_facturacion{
+  margin: auto;
+  height: 60%;
+  width: 80%; 
+  position: relative;
+  border-style: solid;
+  border-radius: 15px 30px;
+  margin-bottom: 2em ;
+  
+}
 /*administracion*/
 
 .administracion{
@@ -583,11 +616,11 @@ margin-top: 30px;
 
 .btn_sql{
   border: none;
-  margin: 30px;
-  padding: 8px 40px;
+  margin: 10px;
+  padding: 4px 40px;
   border-radius: 15px 30px;
   background: grey;
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 600;
   cursor: pointer;
   color: beige;
@@ -597,12 +630,13 @@ margin-top: 30px;
 
 .btn_sql_tabla{
   border: none;
-  margin: 50px 150px;
+  margin: 10px;
+  margin-left: 180;
   margin-bottom: 50px;
-  padding: 8px 40px;
+  padding: 4px 40px;
   border-radius: 15px 30px;
   background: grey;
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 600;
   cursor: pointer;
   color: beige;
@@ -612,24 +646,41 @@ margin-top: 30px;
 }
 
 .caja_usuarios{
+  width: 100px;
   text-align: center;
-  min-width: 100px;
-  min-height: 100px;
   max-height: 200px;
-  margin: 50px;
+  border-color: rgb(41, 39, 39);
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 15px 30px;
+  overflow: auto;
+}
+
+.editar_descripcion{
+  text-align: center;
+  width: 600px;
+  height: 200px;
+  border-radius: 15px 30px;
+  display: block;
+  }
+
+.caja_imagen_vehiculo{
+  text-align: center;
+  max-height: 500px;
   border-color: rgb(41, 39, 39);
   border-width: 5px;
   border-style: solid;
   border-radius: 15px 30px;
   overflow: auto;
 }
+
 .caja_usuarios_1{
   text-align: center;
   margin-bottom: 50px;
   background-color:white ;
   border-color: rgb(41, 39, 39);
   border-width: 5px;
-  border-style: solid;
+  border-style: none;
   margin-bottom: 20px;
 }
 
@@ -642,7 +693,7 @@ margin-top: 30px;
   max-width: 200px;
   border-color: rgb(41, 39, 39);
   border-width: 5px;
-  border-style: solid;
+  
   border-radius: 15px 30px;
 }
 
@@ -776,3 +827,16 @@ padding: 20px;
   border-radius: 15px 30px;
   
 }
+
+
+  @media print { 
+    #printPDF { display: none; } 
+    #btn_volver_factura { display: none; } 
+    #knowledge { display: none; } 
+    #knowledge_container { display: none; } 
+    #contenedor_facturacion{display: grid;
+      grid-template-columns:none;
+      grid-template-rows: 1fr1fr;
+    }
+    #titulo {display: none;}
+  }

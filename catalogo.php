@@ -53,36 +53,63 @@ $sql ="SELECT * FROM `usuarios` WHERE `id` = '$id'";
 </header>
 
 <body >
-
-    <section class="catalogo">
-    
-        <div class="viñetas" id="viñetas">
-            <form action="" method="post">
-            <h2>Filtro por marcas</h2>
-        <select class="btn_sql" name="buscador" id="buscador">
-                    <option value="">Todas las marcas</option>
-                    <option value="toyota">Toyota</option>
-                    <option value="ford">Ford</option>
-                    <option value="chevrolet">Chevrolet</option>
-                    <option value="honda">Honda</option>
-                    <option value="bmw">BMW</option>
-                    <option value="audi">Audi</option>
-                    <option value="mercedes">Mercedes-Benz</option>
-                    <option value="volkswagen">Volkswagen</option>
-                    <option value="nissan">Nissan</option>
-                    <option value="kia">Kia</option>
-                    <option value="mazda">Mazda</option>
-                    <option value="hyundai">Hyundai</option>
-                    <option value="jeep">Jeep</option>
-                    <option value="subaru">Subaru</option>
-                    <option value="peugeot">Peugeot</option>
-                    <option value="suzuki">Suzuki</option>
+<form class="filtros" action="" method="post">
+            <h2>Filtros de busqueda</h2>
+        <select class="btn_sql" name="marca_buscar" id="marca_buscar">
+                    <option value="">Marcas(Todas)</option>
+                    <option value="Poyota">Toyota</option>
+                    <option value="Ford">Ford</option>
+                    <option value="Chevrolet">Chevrolet</option>
+                    <option value="Honda">Honda</option>
+                    <option value="BMW">BMW</option>
+                    <option value="Audi">Audi</option>
+                    <option value="Mercedes">Mercedes-Benz</option>
+                    <option value="Volkswagen">Volkswagen</option>
+                    <option value="Nissan">Nissan</option>
+                    <option value="Kia">Kia</option>
+                    <option value="Mazda">Mazda</option>
+                    <option value="Hyundai">Hyundai</option>
+                    <option value="Jeep">Jeep</option>
+                    <option value="Subaru">Subaru</option>
+                    <option value="Peugeot">Peugeot</option>
+                    <option value="Suzuki">Suzuki</option>
+                </select>
+                <select class="btn_sql" name="tipo_buscar" id="tipo_buscar">
+                    <option value="">Tipo(Todos)</option>
+                <option value="Turismo">Turismo</option>
+                    <option value="SUV">Suv</option>
+                    <option value="Deportivo">Deportivo</option>
+                </select>
+                <select class="btn_sql" name="combustible_buscar" id="combustible_buscar">
+                    <option value="">Combustible(Todos)</option>
+                    <option value="Diesel">Diesel</option>
+                    <option value="Gasolina">Gasolina</option>
+                </select>
+                <select class="btn_sql" name="asientos_buscar" id="asientos_buscar">
+                    <option value="">asientos(Todos)</option>
+                    <option value="2">Asientos: 2</option>
+                    <option value="4">Asientos: 4</option>
+                    <option value="5">Asientos: 5</option>
+                </select>
+                <select class="btn_sql" name="transmision_buscar" id="transmision_buscar">
+                    <option value="">Transmision(Todas)</option>
+                    <option value="manual">Transmision: Manual</option>
+                    <option value="automatica">Transmision: Automatica</option>
                 </select>
                 <input class="btn_sql" type="submit" value="buscar">
             </form>
+    <section class="catalogo">
+    
+        <div class="viñetas" id="viñetas">
+            
             <div class="fila">
             <?php
-                $buscador = isset($_POST['buscador']) ? $_POST['buscador'] : '';
+                $marca_buscar = isset($_POST['marca_buscar']) ? $_POST['marca_buscar'] : '';
+                $tipo_buscar = isset($_POST['tipo_buscar']) ? $_POST['tipo_buscar'] : '';
+                $combustible_buscar = isset($_POST['combustible_buscar']) ? $_POST['combustible_buscar'] : '';
+                $asientos_buscar = isset($_POST['asientos_buscar']) ? $_POST['asientos_buscar'] : '';
+                $transmision_buscar = isset($_POST['transmision_buscar']) ? $_POST['transmision_buscar'] : '';
+
                 $host = "localhost";       // Dirección del servidor
                 $usuario = "root";   // Nombre de usuario
                 $contraseña = "";  // Contraseña del usuario
@@ -97,8 +124,8 @@ $sql ="SELECT * FROM `usuarios` WHERE `id` = '$id'";
                 }
 
                 // Consulta para obtener los vehículos
-                if($buscador==''){
-                    $sql = "SELECT id,marca, modelo, descripcion, imagen, caballos, precio FROM vehiculos WHERE reservado ='0' ";
+                if($marca_buscar=='' && $tipo_buscar=='' && $combustible_buscar=='' && $asientos_buscar=='' && $transmision_buscar==''){
+                    $sql = "SELECT * FROM vehiculos WHERE reservado ='0' ";
                     $result = $conn->query($sql);
     
                     // Verificar si hay resultados
@@ -108,9 +135,13 @@ $sql ="SELECT * FROM `usuarios` WHERE `id` = '$id'";
                             echo '<div class="item" onclick="cargar(this)">';
                             echo '<div class="vehiculo_img">';
                             echo '<img src="' . $row["imagen"] . '" alt="">';
-                            echo '<h2 class="modelo">' . $row["marca"] . '</h2>';
-                            echo '<h2 class="modelo">' . $row["modelo"] . '</h2>';
-                            echo '<p>' . $row["caballos"] . ' caballos</p>';
+                            echo '<h2>' . $row["marca"] . '</h2>';
+                            echo '<h2>' . $row["modelo"] . '</h2>';
+                            echo '<input type="hidden" value="'. $row["tipo"] .'" >';
+                            echo '<input type="hidden" value="'. $row["Combustible"] .'" >';
+                            echo '<input type="hidden" value="'. $row["Transmision"] .'" >';
+                            echo '<input type="hidden" value="'. $row["caballos"] . ' caballos">';
+                            echo '<br>';
                             echo '<span class="precio">' . $row["precio"] . '$/d</span>';
                             echo '<input type="hidden" id="id" value="./alquilar.php?id='.$row["id"].'" name="id">';
                             echo '</div>';
@@ -121,7 +152,23 @@ $sql ="SELECT * FROM `usuarios` WHERE `id` = '$id'";
                     }
 
                 }else{
-                    $sql = "SELECT id, marca, modelo, descripcion, imagen, caballos, precio FROM vehiculos WHERE reservado ='0' and  marca='$buscador'";
+                    
+                    $sql = "SELECT * FROM vehiculos WHERE 1";
+                    if ($marca_buscar) {
+                        $sql .= " AND marca = '$marca_buscar'";
+                    }
+                    if ($tipo_buscar) {
+                        $sql .= " AND tipo = '$tipo_buscar'";
+                    }
+                    if ($combustible_buscar) {
+                        $sql .= " AND Combustible = '$combustible_buscar'";
+                    }
+                    if ($asientos_buscar) {
+                        $sql .= " AND Asientos = '$asientos_buscar'";
+                    }
+                    if ($transmision_buscar) {
+                        $sql .= " AND Transmision = '$transmision_buscar'";
+                    }
                     $result = $conn->query($sql);
     
                     // Verificar si hay resultados
@@ -131,18 +178,24 @@ $sql ="SELECT * FROM `usuarios` WHERE `id` = '$id'";
                             echo '<div class="item" onclick="cargar(this)">';
                             echo '<div class="vehiculo_img">';
                             echo '<img src="' . $row["imagen"] . '" alt="">';
-                            echo '<h2 class="modelo">' . $row["marca"] . '</h2>';
-                            echo '<h2 class="modelo">' . $row["modelo"] . '</h2>';
-                            echo '<p>' . $row["caballos"] . ' caballos</p>';
+                            echo '<h2>' . $row["marca"] . '</h2>';
+                            echo '<h2>' . $row["modelo"] . '</h2>';
+                            echo '<input type="hidden" value="'. $row["tipo"] .'" >';
+                            echo '<input type="hidden" value="'. $row["Combustible"] .'" >';
+                            echo '<input type="hidden" value="'. $row["Transmision"] .'" >';
+                            echo '<input type="hidden" value="'. $row["caballos"] . ' caballos">';
+                            echo '<br>';
                             echo '<span class="precio">' . $row["precio"] . '$/d</span>';
                             echo '<input type="hidden" id="id" value="./alquilar.php?id='.$row["id"].'" name="id">';
                             echo '</div>';
                             echo '</div>';
                         }
-                    } else {
+                    }else{
                         echo "No hay vehículos disponibles.";
+                    } 
+
                     }
-                }
+                
 
 
                 // Cerrar conexión
@@ -157,21 +210,18 @@ $sql ="SELECT * FROM `usuarios` WHERE `id` = '$id'";
                 &#x2718
             </div>
             <div class="info">
-                <img src="" alt="" id="img">
-                <h2 id="modelo"></h2>
-                <p id="descripcion"></p>
+                <img class="caja_usuarios_imagen" src="" alt="" id="img">
+                <p id="marca"></p>
+                <p id="modelo"></p>
+                <p id="tipo"></p>
+                <p id="combustible"></p>
+                <p id="transmision"></p>
+                <p id="caballos"></p>
                 <span class="precio" id="precio"></span>
                 <div class="fila">
                     <div class="size">
-                        <label for="">Tiempo disponible</label>
-                        <select name="" id="">
-                            <option value="">1 dia</option>
-                            <option value="">2 dias</option>
-                            <option value="">5 dias</option>
-                            <option value="">1 semana</option>
-                        </select>
                     </div>
-                    <a href="" class="btn_sql" id="boton_selecion_tiempo">Alquilar</a>
+                    <a href="" class="btn_sql" id="id_vehiculo">Alquilar</a>
                 </div>
             </div>
          </div>
@@ -183,7 +233,7 @@ $sql ="SELECT * FROM `usuarios` WHERE `id` = '$id'";
                 <p class="knowledge_paragraph">Contactanos y envianos tus sugerencias mendiante
                     los canales disponibles
                 </p>
-                    <a href="./contacto.html" class="cta">Contacto</a>
+                    <a href="./contacto.php" class="cta">Contacto</a>
             </div>
             <figure class="knowledge_picture">
                 <img src="./Imagenes/bmw.png" class="knowledge_img">

@@ -57,7 +57,6 @@ $sql ="SELECT * FROM `usuarios` WHERE `id` = '$id'";
                 <input class="cuadro_editar" type="email" value="<?php echo $usuario['correo']?>" id="correo_editar" name="correo_editar">
                 <select class="cuadro_editar" name="rol_editar" id="rol_editar">
                     <option value="admin">Administrador</option>
-                    <option value="alimentador">alimentador</option>
                     <option value="usuario">Usuario</option>
                 </select>
                 <input class="cuadro_editar" type="hidden" id="id" value="<?php echo $id;?>" name="id">
@@ -89,6 +88,7 @@ if (campo1 === '' || campo2 === '' || campo3 ==='') {
 }
 });
 </script>
+
 </body>
 
 

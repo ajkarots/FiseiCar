@@ -41,11 +41,10 @@ $sql ="SELECT * FROM `usuarios` WHERE `id` = '$id'";
 
             <div class="contenedor_administracion">
                     <table class="retorno_mysql" >
-                        <tr>
-                            <td>Nombre</td>
-                            <td>Clave</td>
-                            <td>Correo</td>
-                            <td>Rol</td>
+                        <tr class="enunciado">
+                            <td class="caja_usuarios_1">Nombre</td>
+                            <td class="caja_usuarios_1">Correo</td>
+                            <td class="caja_usuarios_1">Rol</td>
                         </tr>
                         <tr>
                         <?php
@@ -56,11 +55,10 @@ $sql ="SELECT * FROM `usuarios` WHERE `id` = '$id'";
                         ?>    
                         <tr>
                             <td class="caja_usuarios"><?php echo $tabla ['nombre'] ?></td>
-                            <td class="caja_usuarios"><?php echo $tabla ['clave'] ?></td>
                             <td class="caja_usuarios"><?php echo $tabla ['correo'] ?></td>
                             <td class="caja_usuarios"><?php echo $tabla ['rol'] ?></td>
-                            <td><a href="editar_usuario.php?id=<?php echo $tabla ['id'] ?>" class="btn_sql" id="btn_editar" value="['id']">editar</a></td>
-                            <td><a href="./funciones/eliminar.php?id=<?php echo $tabla ['id'] ?>" class="btn_sql" id="btn_eliminar" value="['id']">eliminar</a></td>
+                            <td><a href="editar_usuario.php?id=<?php echo $tabla ['id'] ?>" class="btn_sql" id="btn_editar" value="['id']">Editar</a></td>
+                            <td><a href="./funciones/eliminar.php?id=<?php echo $tabla ['id'] ?>" class="btn_sql" id="btn_eliminar" value="['id']">Eliminar</a></td>
                         </tr>
                         <?php
                         }
@@ -68,10 +66,10 @@ $sql ="SELECT * FROM `usuarios` WHERE `id` = '$id'";
                         ?>       
                         </tr>
                     </table>
-                <a href="./administrador.php" class="btn_sql" id="btn_volver">Volver</a>
-                <a href="./agregar_usuario.php" class="btn_sql" id="btn_agregar_usuario">Agregar</a>
             </div>
         </section>
+        <a href="./administrador.php" class="btn_sql_tabla" id="btn_volver">Volver</a>
+        <a href="./agregar_usuario.php" class="btn_sql_tabla" id="btn_agregar_usuario">Agregar</a>
         <section class="knowledge">
             <div class="knowledge_container container">
                 <div class="knowledge_text">

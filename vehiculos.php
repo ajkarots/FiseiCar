@@ -66,9 +66,16 @@ if  ($usuario['rol']!='admin'){
                         
                         <?php
                         include 'conexion.php';
+                        $disponibilidad;
                         $sql ="SELECT * FROM `vehiculos`";
                         $result = mysqli_query($conexion,$sql);
                         while($tabla = mysqli_fetch_array($result)){
+                            if($tabla['reservado']==1){
+                                $disponibilidad='Si';
+                            }
+                            else{
+                                $disponibilidad='No';
+                            }
                         ?>    
                         <tr>
                             <td class="caja_usuarios"><?php echo $tabla ['marca'] ?></td>
@@ -80,11 +87,15 @@ if  ($usuario['rol']!='admin'){
                             <td class="caja_usuarios"><?php echo $tabla ['Combustible'] ?></td>
                             <td class="caja_usuarios"><?php echo $tabla ['Asientos'] ?></td>
                             <td class="caja_usuarios"><?php echo $tabla ['Transmision'] ?></td>
-                            <td class="caja_usuarios"><?php echo $tabla ['reservado'] ?></td>
+                            <td class="caja_usuarios"><?php echo $disponibilidad?></td>
                             <td><a href="./editar_vehiculo.php?id=<?php echo $tabla ['id'] ?>" class="btn_sql" id="btn_editar" value="['id']">Editar</a></td>
                             <td><a href="./funciones/eliminar_vehiculo.php?id=<?php echo $tabla ['id'] ?>" class="btn_sql" id="btn_eliminar" value="['id']">Eliminar</a></td>
                             <td><a href="./funciones/vehiculo_disponible.php?id=<?php echo $tabla ['id'] ?>" class="btn_sql" id="btn_disponible" value="['id']">Disponible</a></td>
-                            <td><a href="./reporte_falla.php?id=<?php echo $tabla ['id'] ?>" class="btn_sql_admin" id="btn_falla">Falla</a></td>
+                            <?php if($disponibilidad=='Si'){
+                                echo '<td><a href="./reporte_falla.php?id=' . $tabla['id'] . '" class="btn_sql" id="btn_falla">Devolución</a></td>';
+
+                            }    ?>
+                            
                         </tr>
                         <?php
                         }

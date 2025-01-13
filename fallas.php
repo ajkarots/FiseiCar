@@ -12,7 +12,7 @@ if(!isset($_SESSION['usuario'])){
     die();
 }
 $id=$_SESSION['usuario'];
-$sql ="SELECT * FROM `usuarios` WHERE `id` = '$id'";
+$sql ="SELECT * FROM usuarios WHERE id = '$id'";
                 $result = mysqli_query($conexion,$sql);
                 $usuario = $result->fetch_assoc();
                 mysqli_close($conexion);
@@ -42,35 +42,58 @@ $sql ="SELECT * FROM `usuarios` WHERE `id` = '$id'";
 
             <div class="contenedor_administracion">
                     <table class="retorno_mysql" >
-                        <tr>
+                        <tr class="enunciado">
                             <td>Usuario que alquila</td>
                             <td>Vehículo alquilado</td>
                             <td>Tipo de falla</td>
                             <td>Descripcion</td>
-                            <td>fecha</td>
+                            <td>fecha devolucion</td>
+                            <td>Exceso de Velocidad</td>
+                            <td>Sin cinturon</td>
+                            <td>Mal estacionado</td>
+                            <td>Circular en lugares no permitidos</td>
                         </tr>
                         <tr>
                         <?php
                         include 'conexion.php';
-                        $sql ="SELECT * FROM `devoluciones`";
+                        $sql ="SELECT * FROM devoluciones";
                         $result = mysqli_query($conexion,$sql);
                         while($tabla = mysqli_fetch_array($result)){
-                            $sql ="SELECT nombre FROM usuarios WHERE id='$tabla[usuario]'";
+                            $sql ="SELECT * FROM usuarios WHERE id='" . $tabla['usuario'] . "'";
                             $result2 = mysqli_query($conexion,$sql);
                             $usuario = $result2->fetch_assoc();
 
-                            $sql2 ="SELECT modelo,marca FROM vehiculos WHERE id='$tabla[vehiculo]'";
+                            $sql2 = "SELECT * FROM vehiculos WHERE id='".$tabla['vehiculo']."'";
                             $result3 = mysqli_query($conexion,$sql2);
-                            $usuario2 = $result3->fetch_assoc();
+                            $vehiculo = $result3->fetch_assoc();
                         ?>    
                         <tr>
                             
-                            <td class="caja_usuarios"><?php echo $usuario['nombre'] ?></td>
-                            <td class="caja_usuarios"><?php echo $usuario2 ['marca'] ?></td>
-                            <td class="caja_usuarios"><?php echo $usuario2 ['modelo'] ?></td>
+                            <td class="caja_usuarios"><?php
+                                if (isset($usuario['nombre'])) {
+                                    echo $usuario['nombre'];
+                                    
+                                } else {
+                                    echo "Usuario no encontrado";
+                                    
+                                }
+                            
+                             ?></td>
+                            <td class="caja_usuarios"><?php 
+                                                            if (isset($vehiculo ['marca']) && isset($vehiculo ['modelo'])) {
+                                                                echo $vehiculo['marca'] . " " . $vehiculo['modelo'];
+                                                            } else {
+                                                                echo "vehiculo no encontrado";
+                                                            }
+                            ?></td>
                             <td class="caja_usuarios"><?php echo $tabla ['estado'] ?></td>
                             <td class="caja_usuarios"><?php echo $tabla ['descripcion_falla'] ?></td>
                             <td class="caja_usuarios"><?php echo $tabla ['fecha'] ?></td>
+                            <td class="caja_usuarios"><?php echo $tabla ['excesoVelocidad'] ?></td>
+                            <td class="caja_usuarios"><?php echo $tabla ['cinturonSeguridad'] ?></td>
+                            <td class="caja_usuarios"><?php echo $tabla ['estacionamiento'] ?></td>
+                            <td class="caja_usuarios"><?php echo $tabla ['lugaresNoPermitidos'] ?></td>
+                            <td><a href="./multas.php?id=<?php echo $tabla ['id'] ?>" class="btn_sql" id="btn_eliminar">Factura</a></td>
                             <td><a href="./funciones/eliminar_registro.php?id=<?php echo $tabla ['id'] ?>" class="btn_sql" id="btn_eliminar">Eliminar</a></td>
                         </tr>
                         <?php
@@ -78,8 +101,11 @@ $sql ="SELECT * FROM `usuarios` WHERE `id` = '$id'";
                         ?>       
                         </tr>
                     </table>
-                <a href="./administrador.php" class="btn_sql" id="btn_vehiculos">Volver</a>
+                
             </div>
+        </section>
+        <section>
+        <a href="./administrador.php" class="btn_sql_tabla" id="btn_vehiculos">Volver</a>
         </section>
         <section class="knowledge">
             <div class="knowledge_container container">

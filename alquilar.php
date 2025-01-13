@@ -11,15 +11,20 @@ if (!isset($_SESSION['usuario'])) {
     session_destroy();
     die();
 }
-$id = $_SESSION['usuario'];
-$sql = "SELECT * FROM `usuarios` WHERE `id` = '$id'";
+$idUsuario = $_SESSION['usuario'];
+$sql = "SELECT * FROM `usuarios` WHERE `id` = '$idUsuario'";
 $result = mysqli_query($conexion, $sql);
 $usuario = $result->fetch_assoc();
 mysqli_close($conexion);
 ?>
+
 <html lang="en">
 
 <head>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Administrador</title>
@@ -51,6 +56,7 @@ mysqli_close($conexion);
             ?>
             <form class="form_alquilar_vehiculo" action="./funciones/alquilar_vehiculo_sql.php" method="POST" id="form_alquilar_vehiculo">
                 <br></br>
+                <div id="pdf">
                 <table class="editar_vehiculo_mysql ">
                     <tr>
                         <td>Marca&#160 </td>
@@ -61,54 +67,23 @@ mysqli_close($conexion);
                         <td>Transmision&#160 </td>
                         <td>Tiempo&#160 </td>
                     </tr>
-                    <tr>
+
                     <tr>
                         <td class="caja_usuarios"><?php echo $vehiculo['marca'] ?></td>
-                        <img class="caja_usuarios" src=<?php echo $vehiculo['imagen'] ?>>
+                        <img class="caja_imagen_vehiculo" src=<?php echo $vehiculo['imagen'] ?>>
                         <td class="caja_usuarios"><?php echo $vehiculo['caballos'] ?></td>
                         <td class="caja_usuarios"><?php echo $vehiculo['precio'] ?></td>
                         <td class="caja_usuarios"><?php echo $vehiculo['Combustible'] ?></td>
                         <td class="caja_usuarios"><?php echo $vehiculo['Asientos'] ?></td>
                         <td class="caja_usuarios"><?php echo $vehiculo['Transmision'] ?></td>
-                        <td><select class="caja_usuarios" name="tiempo" id="tiempo">
-                                <option value="1">Dia: 1</option>
-                                <option value="2">Dias: 2</option>
-                                <option value="3">Dias: 3</option>
-                                <option value="4">Dias: 4</option>
-                                <option value="5">Dias: 5</option>
-                                <option value="6">Dias: 6</option>
-                                <option value="7">Dias: 7</option>
-                                <option value="8">Dias: 8</option>
-                                <option value="9">Dias: 9</option>
-                                <option value="10">Dias: 10</option>
-                                <option value="11">Dias: 11</option>
-                                <option value="12">Dias: 12</option>
-                                <option value="13">Dias: 13</option>
-                                <option value="14">Dias: 14</option>
-                                <option value="15">Dias: 15</option>
-                                <option value="16">Dias: 16</option>
-                                <option value="17">Dias: 17</option>
-                                <option value="18">Dias: 18</option>
-                                <option value="19">Dias: 19</option>
-                                <option value="20">Dias: 20</option>
-                                <option value="21">Dias: 21</option>
-                                <option value="22">Dias: 22</option>
-                                <option value="23">Dias: 23</option>
-                                <option value="24">Dias: 24</option>
-                                <option value="25">Dias: 25</option>
-                                <option value="26">Dias: 26</option>
-                                <option value="27">Dias: 27</option>
-                                <option value="28">Dias: 28</option>
-                                <option value="29">Dias: 29</option>
-                                <option value="30">Dias: 30</option>
-                            </select></td>
+                        <td><input class="btn_sql" type="text" id="tiempo" name="tiempo" value="01/01/2025 - 01/15/2025"/></td>
                         <input class="cuadro_editar" type="hidden" id="precio_auto" value="<?php echo $precio_alquilar ?>" name="precio_auto">
                         <input class="cuadro_editar" type="hidden" id="id" value="<?php echo $id ?>" name="id">
                     </tr>
-                    </tr>
+
                 </table>
-
-
+                </div>
+                
                 <button type="submit" class="btn_sql" id="btn_guardar">Alquilar</button>
                 <a href="./catalogo.php" class="btn_sql" id="btn_cancelar">Cancelar</a>
             </form>
@@ -134,6 +109,15 @@ mysqli_close($conexion);
     <script>
         document.getElementById('form_alquilar_vehiculo').addEventListener('submit', function(event) {
             alert('Vehiculo reservado');
+        });
+        var today = new Date().toISOString().slice(0, 16)
+        $(function() {
+            $('input[name="tiempo"]').daterangepicker({
+                opens: 'left',
+                minDate:  moment().format('MM/DD/YYYY') 
+            }, function(start, end, label) {
+                console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
+            });
         });
     </script>
 </body>

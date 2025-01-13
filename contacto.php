@@ -58,6 +58,7 @@ if(!isset($_SESSION['usuario'])){
                     <img src="./Imagenes/jona.jpg" class="img_desarrolladores">
                     <h3 class="about_title">Jonathan Ojeda</h3>
                     <p class="about_paragraph">Estudiante de la carrera de Ingeniería en Software. </p>
+                    <P class="about_paragraph">Correo: jonathan130397@gmail.com</P>
                     <P class="about_paragraph">Tlf: 0963353752</P>
                 </article>
             </div>

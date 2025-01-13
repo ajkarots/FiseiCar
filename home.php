@@ -97,7 +97,7 @@ $sql ="SELECT * FROM `usuarios` WHERE `id` = '$id'";
                 <div class="knowledge_text">
                     <h2>¡No experes más, comienza tu viaje!</h2>
                     <p class="knowledge_paragraph">¡Embarcate en la mejor aventura sobre ruedas!</p>
-                        <a href="#" class="cta">Renta tu coche</a>
+                        <a href="./catalogo.php" class="cta">Renta tu coche</a>
                 </div>
                 <figure class="knowledge_picture">
                     <img src="./Imagenes/bmw.png" class="knowledge_img">

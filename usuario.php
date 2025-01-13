@@ -49,14 +49,18 @@ if(!isset($_SESSION['usuario'])){
             <div class="about_main">
                 <article class="about_icons">
                     <img src="<?php echo $usuario['foto']?>" class="img_usuario">
+                    <P class="info_usuario">correo: <?php echo $usuario['correo']?></P>
                     <P class="info_usuario">Tefelono: 0<?php echo $usuario['telefono']?></P>
                     <P class="info_usuario">Edad: <?php echo $usuario['edad']?></P>
+                    <P class="info_usuario">Provincia: <?php echo $usuario['provincia']?></P>
                     <P class="info_usuario">Ciudad: <?php echo $usuario['ciudad']?></P>
+                    
+                    
                 </article>
         </section>
             </div>
-            <div>                    <a href="./editar_perfil.php" class="btn_sql">Editar</a>
-            <a href="./historial_usuario.php" class="btn_sql">Historial de alquiler</a></div>
+            <div>                    <a href="./editar_perfil.php" class="btn_sql_tabla">Editar</a>
+            <a href="./historial_usuario.php" class="btn_sql_tabla">Historial de alquiler</a></div>
         </section>
         <section class="knowledge">
             <div class="knowledge_container container">
