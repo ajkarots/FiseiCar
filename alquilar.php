@@ -57,33 +57,43 @@ mysqli_close($conexion);
             <form class="form_alquilar_vehiculo" action="./funciones/alquilar_vehiculo_sql.php" method="POST" id="form_alquilar_vehiculo">
                 <br></br>
                 <div id="pdf">
-                <table class="editar_vehiculo_mysql ">
-                    <tr>
-                        <td>Marca&#160 </td>
-                        <td>Caballos&#160 </td>
-                        <td>Precio/dia&#160 </td>
-                        <td>Combustible&#160 </td>
-                        <td>Asientos&#160 </td>
-                        <td>Transmision&#160 </td>
-                        <td>Tiempo&#160 </td>
-                    </tr>
+                    <table class="editar_vehiculo_mysql ">
+                        <tr>
+                            <td>Marca&#160 </td>
+                            <td>Caballos&#160 </td>
+                            <td>Precio/dia&#160 </td>
+                            <td>Combustible&#160 </td>
+                            <td>Asientos&#160 </td>
+                            <td>Transmision&#160 </td>
+                            <td>Tiempo&#160 </td>
 
-                    <tr>
-                        <td class="caja_usuarios"><?php echo $vehiculo['marca'] ?></td>
-                        <img class="caja_imagen_vehiculo" src=<?php echo $vehiculo['imagen'] ?>>
-                        <td class="caja_usuarios"><?php echo $vehiculo['caballos'] ?></td>
-                        <td class="caja_usuarios"><?php echo $vehiculo['precio'] ?></td>
-                        <td class="caja_usuarios"><?php echo $vehiculo['Combustible'] ?></td>
-                        <td class="caja_usuarios"><?php echo $vehiculo['Asientos'] ?></td>
-                        <td class="caja_usuarios"><?php echo $vehiculo['Transmision'] ?></td>
-                        <td><input class="btn_sql" type="text" id="tiempo" name="tiempo" value="01/01/2025 - 01/15/2025"/></td>
-                        <input class="cuadro_editar" type="hidden" id="precio_auto" value="<?php echo $precio_alquilar ?>" name="precio_auto">
-                        <input class="cuadro_editar" type="hidden" id="id" value="<?php echo $id ?>" name="id">
-                    </tr>
+                        </tr>
 
-                </table>
+                        <tr>
+                            <td class="caja_usuarios"><?php echo $vehiculo['marca'] ?></td>
+                            <img class="caja_imagen_vehiculo" src=<?php echo $vehiculo['imagen'] ?>>
+                            <td class="caja_usuarios"><?php echo $vehiculo['caballos'] ?></td>
+                            <td class="caja_usuarios"><?php echo $vehiculo['precio'] ?></td>
+                            <td class="caja_usuarios"><?php echo $vehiculo['Combustible'] ?></td>
+                            <td class="caja_usuarios"><?php echo $vehiculo['Asientos'] ?></td>
+                            <td class="caja_usuarios"><?php echo $vehiculo['Transmision'] ?></td>
+                            <td><input class="btn_sql" type="text" id="tiempo" name="tiempo" value="01/01/2025 - 01/15/2025" /></td>
+
+                            <input class="cuadro_editar" type="hidden" id="precio_auto" value="<?php echo $precio_alquilar ?>" name="precio_auto">
+                            <input class="cuadro_editar" type="hidden" id="id" value="<?php echo $id ?>" name="id">
+                        </tr>
+
+                    </table>
+                    <h5>Tipo de pago</h5>
+                    <select class="btn_sql" name="tipo_pago" id="tipo_pago">
+                        <option value="efectivo">efectivo</option>
+                        <option value="tarjeta">tarjeta</option>
+                        <option value="transferencia">transferencia</option>
+                    </select>
+                    <h5>Numero de tarjeta o transferencia</h5>
+                    <input class="caja_transferencia" type="text" id="numeroTarjetaTransferencia" name="numeroTarjetaTransferencia" />
                 </div>
-                
+
                 <button type="submit" class="btn_sql" id="btn_guardar">Alquilar</button>
                 <a href="./catalogo.php" class="btn_sql" id="btn_cancelar">Cancelar</a>
             </form>
@@ -114,7 +124,7 @@ mysqli_close($conexion);
         $(function() {
             $('input[name="tiempo"]').daterangepicker({
                 opens: 'left',
-                minDate:  moment().format('MM/DD/YYYY') 
+                minDate: moment().format('MM/DD/YYYY')
             }, function(start, end, label) {
                 console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
             });

@@ -13,6 +13,7 @@ if (!isset($_SESSION['usuario'])) {
 }
 $id = $_SESSION['usuario'];
 $codVer = $_SESSION['conf'];
+echo $codVer;
 ?>
 
 
@@ -126,25 +127,27 @@ $codVer = $_SESSION['conf'];
         </section>
     </main>
     <script>
-        var codVer = "<?php echo $codVer; ?>";
+        var codVer = "<?php echo trim($codVer); ?>";
         document.getElementById('formulario_editar_perfil').addEventListener('submit', function(event) {
             let campo1 = document.getElementById('nombre_editar').value;
             let campo2 = document.getElementById('clave_editar').value;
             let campo3 = document.getElementById('correo_editar').value;
             let campo4 = document.getElementById('edad_usuario').value;
-            let campo5 = document.getElementById('box_provincias').value;
+            let campo5 = document.getElementById('boxProvincias').value;
             let campo6 = document.getElementById('telefono_usuario').value;
             let campo7 = document.getElementById('img_editar').value;
             let campo8 = document.getElementById('verificacion').value;
-            if (campo8 !== codVer) {
-                event.preventDefault(); // Evita el envío del formulario
-                alert('El codigo de verificacion no es el correcto.')
-            };
 
+            if (campo8.trim() !== codVer.trim()) {
+                event.preventDefault();
+                alert('El código de verificación no es correcto.');
+                return;
+            }
 
             if (campo1 === '' || campo2 === '' || campo3 === '' || campo4 === '' || campo5 === '' || campo6 === '' || campo7 === '') {
                 event.preventDefault(); // Evita el envío del formulario
                 alert('Por favor, completa todos los campos.');
+                return;
             }
         });
     </script>

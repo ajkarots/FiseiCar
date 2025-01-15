@@ -94,7 +94,7 @@ $sql ="SELECT * FROM `usuarios` WHERE `id` = '$id'";
 
         <section class="knowledge">
             <div class="knowledge_container container">
-                <div class="knowledge_text">
+                <div class="knowledge_text">sd
                     <h2>¡No experes más, comienza tu viaje!</h2>
                     <p class="knowledge_paragraph">¡Embarcate en la mejor aventura sobre ruedas!</p>
                         <a href="./catalogo.php" class="cta">Renta tu coche</a>

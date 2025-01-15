@@ -655,6 +655,10 @@ margin-top: 30px;
   border-radius: 15px 30px;
   overflow: auto;
 }
+.caja_transferencia{
+  border-radius: 15px 30px;
+  width: 300px;
+}
 
 .editar_descripcion{
   text-align: center;
