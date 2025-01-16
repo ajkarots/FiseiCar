@@ -5,14 +5,13 @@ if(!isset($_SESSION['usuario'])){
     echo'
     <script>
     alert("Debes iniciar sesion par alquilar");
-    window.location = "/Proyecto autos/home.php";
+    window.location = "login.php";
     </script>';
-    header("location: ./login.php");
     session_destroy();
     die();
 }
 $id=$_SESSION['usuario'];
-$sql ="SELECT * FROM `usuarios` WHERE `id` = '$id'";
+$sql ="SELECT * FROM usuarios WHERE id = '$id'";
                 $result = mysqli_query($conexion,$sql);
                 $usuario = $result->fetch_assoc();
                 mysqli_close($conexion);

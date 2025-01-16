@@ -31,7 +31,7 @@
         echo '
             <script>
             alert("El usuario no encuentra registrado");
-            window.location = "/Proyecto autos/login.php";
+            window.location = "../login.php";
             </script>
         ';
         mysqli_close($conexion);
@@ -63,7 +63,7 @@
                         echo'
                         <script>
                         alert("Correo de recuperacion enviado");
-                        window.location = "/Proyecto autos/login.php";
+                        window.location = "../login.php";
                         </script>
                         ';  
                     } else {
