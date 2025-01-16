@@ -20,7 +20,7 @@ RUN apt-get update && apt-get install -y \
 COPY . /var/www/html/
 
 # Copiar el archivo php.ini personalizado al contenedor
-# COPY php.ini /usr/local/etc/php/
+COPY php.ini /usr/local/etc/php/
 
 # Establecer los permisos correctos para los archivos
 RUN chown -R www-data:www-data /var/www/html \

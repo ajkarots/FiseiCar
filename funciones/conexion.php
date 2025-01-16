@@ -1,8 +1,11 @@
 <?php
+
+mysql://root:JPTzCuxsSMZGoFzSMafFaBhvQXTDIzde@viaduct.proxy.rlwy.net:24845/railway
+
 // Configuración de la base de datos
-$host = "localhost";       // Dirección del servidor
+$host = "viaduct.proxy.rlwy.net:24845";       // Dirección del servidor
 $usuario = "root";   // Nombre de usuario
-$contraseña = "";  // Contraseña del usuario
+$contraseña = "JPTzCuxsSMZGoFzSMafFaBhvQXTDIzde";  // Contraseña del usuario
 $base_de_datos = "fisei_car";  // Nombre de la base de datos
 
 // Crear la conexión
