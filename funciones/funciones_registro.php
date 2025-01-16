@@ -104,7 +104,9 @@
         else{
             $_SESSION['usuario']= $row2 ['id'];
             header("Location:home.php");
+            exit();
+            
         }
     }
-
+    ob_end_flush();
 ?>
