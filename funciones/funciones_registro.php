@@ -1,5 +1,4 @@
 <?php
-    ob_start();
     use PHPMailer\PHPMailer\PHPMailer;
     use PHPMailer\PHPMailer\Exception;
     use PHPMailer\PHPMailer\SMTP;
@@ -80,7 +79,7 @@
         mysqli_close($conexion);
         }}
         
-    if(isset($boton) && $boton == 'entrar'){
+    if(isset($boton) && $boton == 'Entrar'){
         $query2 = "SELECT id FROM usuarios WHERE correo=? AND clave=?";
         $stmt2 = $conexion->prepare($query2);
         $stmt2 ->bind_param("ss",$correo,$nombre);
@@ -104,5 +103,4 @@
             
         }
     }
-    ob_end_flush();
 ?>
