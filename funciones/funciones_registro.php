@@ -12,23 +12,22 @@
 
 
     session_start();
-    include'conexion.php';
     $correo = $_POST['ingre_correo'];
     $nombre = $_POST['ingre_cont'];
     
     if (isset($_POST["btn_recuperar_2"])) {
-        $boton2 = $_POST["btn_recuperar_2"];
+        $boton2 = $_POST["btn_recuperar_2"] ?? null;
         
     } 
     if (isset($_POST["btn_entrar"])) {
-        $boton = filter_input(INPUT_POST, 'btn_entrar');
+        $boton = $_POST["btn_entrar"] ?? null;
         
     } 
     
     
 
 
-    if($boton2=='Recuperar'){
+    if(isset($boton2) && $boton2 == 'Recuperar'){
         $query = "SELECT * FROM usuarios WHERE correo= ? AND nombre=?";
         $stmt = $conexion->prepare($query);
         $stmt ->bind_param("ss",$correo,$nombre);
@@ -74,7 +73,6 @@
                         window.location = "/Proyecto autos/login.php";
                         </script>
                         ';  
-                        header("Location: ../login.php?message=ok"); 
                     } else {
                         echo 'Error al enviar correo: ' . $mail->ErrorInfo;
                     }
@@ -88,7 +86,7 @@
         mysqli_close($conexion);
         }}
         
-    if($boton == 'Entrar'){
+    if(isset($boton) && $boton == 'entrar'){
         $query2 = "SELECT id FROM usuarios WHERE correo=? AND clave=?";
         $stmt2 = $conexion->prepare($query2);
         $stmt2 ->bind_param("ss",$correo,$nombre);
