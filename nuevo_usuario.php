@@ -109,7 +109,7 @@ echo $codVer;
                 <input class="cuadro_editar" type="file" placeholder="ruta imagen" id="img_editar" name="img_editar" accept="image/*" required>
                 <input class="cuadro_editar" type="hidden" id="id" value="<?php echo $id; ?>" name="id">
                 <h5>Codigo de verificacion</h5>
-                <input class="cuadro_editar" type="text" name="verificacion" id="verificacion" placeholder="codigo de verificacion">
+                <input class="cuadro_editar" type="text" name="verificacion" id="verificacion" placeholder="codigo de verificacion" required>
                 <a href="./funciones/eliminarRegistroUsuario.php?id=<?php echo $usuario['id'] ?>" class="btn_sql" id="btn_eliminar" value="['id']">Cancelar registro</a>
                 <button type="submit" class="btn_sql" id="btn_guardar">Guardar</button>
             </form>
