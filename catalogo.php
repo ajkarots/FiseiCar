@@ -120,7 +120,7 @@ $sql ="SELECT * FROM `usuarios` WHERE `id` = '$id'";
                 // Consulta para obtener los vehículos
                 if($marca_buscar=='' && $tipo_buscar=='' && $combustible_buscar=='' && $asientos_buscar=='' && $transmision_buscar==''){
                     $sql = "SELECT * FROM vehiculos WHERE reservado ='0' ";
-                    $result = $conn->query($sql);
+                    $result = $conexion->query($sql);
     
                     // Verificar si hay resultados
                     if ($result->num_rows > 0) {
