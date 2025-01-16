@@ -15,10 +15,12 @@ $query = "INSERT INTO vehiculos(marca, modelo, tipo, descripcion, imagen, caball
 VALUES ('$marca','$modelo','$tipo','$descripcion','./Imagenes/$img','$caballos','$precio','$combustible','$asientos','$transmision')";
 
 if ($conexion->query($query) === TRUE) {
-    echo "Vehiculo agregado";
-} else {
-    echo "Error updating record: " . $mysqli->error;
-}
-header("location: ../vehiculos.php");
+} 
+echo '
+<script>
+alert("Vehiculo agregado  ");
+window.location = "../vehiculos.php";
+</script>
+'; 
 exit();
 ?>

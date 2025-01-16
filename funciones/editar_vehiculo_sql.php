@@ -20,6 +20,10 @@ if ($conexion->query($query) === TRUE) {
 } else {
     echo "Error updating record: " . $mysqli->error;
 }
-header("location: ../vehiculos.php");
+echo '
+<script>
+window.location = "../vehiculos.php";
+</script>
+'; 
 exit();
 ?>

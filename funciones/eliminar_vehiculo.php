@@ -16,7 +16,11 @@ try{
 
 }catch(Exception $e){
 
-header("location: ../vehiculos.php");
+    echo '
+    <script>
+    window.location = "../vehiculos.php";
+    </script>
+    '; 
 exit();
 
 }

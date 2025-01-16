@@ -36,6 +36,4 @@ if($stmt->execute()===true && $conexion->query($query) === TRUE){
 }else{
     echo "Error updating record: " . $mysqli->error;
 }
-header("location: ../vehiculos.php");
-exit();
 ?>

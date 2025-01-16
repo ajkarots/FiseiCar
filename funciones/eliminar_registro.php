@@ -10,6 +10,10 @@ if ($conexion->query($query) === TRUE) {
 } else {
     echo "Error updating record: " . $mysqli->error;
 }
-header("location: ../historial.php");
+echo '
+<script>
+window.location = "../historial.php";
+</script>
+'; 
 exit();
 ?>

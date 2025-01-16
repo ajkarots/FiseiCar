@@ -18,12 +18,11 @@ if ($conexion->query($query) === TRUE) {
 } else {
     echo "Error updating record: " . $mysqli->error;
 }
-echo'
+echo '
 <script>
-alert("Usuario actualizado");
-window.location = "../editar_perfil.php";
+alert("usuario actualizado  ");
+window.location = "../usuario.php";
 </script>
-';  
-header("location:../usuario.php");
+'; 
 exit();
 ?>

@@ -11,6 +11,10 @@ if ($conexion->query($query) === TRUE) {
 } else {
     echo "Error updating record: " . $mysqli->error;
 }
-header("location: ../login.php");
+echo '
+<script>
+window.location = "../login.php";
+</script>
+'; 
 exit();
 ?>

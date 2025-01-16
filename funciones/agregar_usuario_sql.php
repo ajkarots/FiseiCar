@@ -7,9 +7,15 @@ $rol =$_POST['rol_editar'];
 $query = "INSERT INTO usuarios(nombre,clave,correo,rol) VALUES ('$nombre','$clave','$correo','$rol')";
 
 if ($conexion->query($query) === TRUE) {
-    echo "Usuario creado";
+    echo '
+    <script>
+    alert("Vehiculo agregado  ");
+    window.location = "../vehiculos.php";
+    </script>
+    '; 
+    exit();
 } else {
     echo "Error updating record: " . $mysqli->error;
 }
-header("location:../usuarios.php");
+
 ?>
