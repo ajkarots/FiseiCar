@@ -15,9 +15,13 @@
     include'conexion.php';
     $correo = $_POST['ingre_correo'];
     $nombre = $_POST['ingre_cont'];
-    $boton = filter_input(INPUT_POST, 'btn_entrar');
+    
     if (isset($_POST["btn_recuperar_2"])) {
         $boton2 = $_POST["btn_recuperar_2"];
+        
+    } 
+    if (isset($_POST["btn_entrar"])) {
+        $boton = filter_input(INPUT_POST, 'btn_entrar');
         
     } 
     
@@ -96,7 +100,7 @@
         echo '
             <script>
             alert("El usuario no encuentra registrado");
-            window.location = "/Proyecto autos/login.php";
+            window.location = "login.php";
             </script>
         ';
         mysqli_close($conexion);
