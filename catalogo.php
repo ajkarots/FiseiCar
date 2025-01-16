@@ -104,23 +104,17 @@ $sql ="SELECT * FROM `usuarios` WHERE `id` = '$id'";
             
             <div class="fila">
             <?php
+                include 'conexion.php';
                 $marca_buscar = isset($_POST['marca_buscar']) ? $_POST['marca_buscar'] : '';
                 $tipo_buscar = isset($_POST['tipo_buscar']) ? $_POST['tipo_buscar'] : '';
                 $combustible_buscar = isset($_POST['combustible_buscar']) ? $_POST['combustible_buscar'] : '';
                 $asientos_buscar = isset($_POST['asientos_buscar']) ? $_POST['asientos_buscar'] : '';
                 $transmision_buscar = isset($_POST['transmision_buscar']) ? $_POST['transmision_buscar'] : '';
 
-                $host = "localhost";       // Dirección del servidor
-                $usuario = "root";   // Nombre de usuario
-                $contraseña = "";  // Contraseña del usuario
-                $base_de_datos = "fisei_car";  // Nombre de la base de datos
-                
-                // Crear la conexión
-                $conn = new mysqli($host, $usuario, $contraseña, $base_de_datos);
 
                 // Verificar conexión
-                if ($conn->connect_error) {
-                    die("Conexión fallida: " . $conn->connect_error);
+                if ($conexion->connect_error) {
+                    die("Conexión fallida: " . $conexion->connect_error);
                 }
 
                 // Consulta para obtener los vehículos
