@@ -14,16 +14,8 @@
     session_start();
     $correo = $_POST['ingre_correo'];
     $nombre = $_POST['ingre_cont'];
-    
-    if (isset($_POST["btn_recuperar_2"])) {
-        $boton2 = $_POST["btn_recuperar_2"] ?? null;
-        
-    } 
-    if (isset($_POST["btn_entrar"])) {
-        $boton = $_POST["btn_entrar"] ?? null;
-        
-    } 
-    
+    $boton2 = $_POST['btn_recuperar_2'] ?? null;
+    $boton = $_POST['btn_entrar'] ?? null;
     
 
 
@@ -43,6 +35,7 @@
             </script>
         ';
         mysqli_close($conexion);
+        exit();
         }
         else{
             $mail = new PHPMailer(true);
