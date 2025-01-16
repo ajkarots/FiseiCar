@@ -1,4 +1,5 @@
 # Usar una imagen base de PHP oficial con Apache
+CMD ["apache2-foreground"]
 FROM php:8.1-apache
 
 # Activar el módulo de reescritura de Apache y el módulo de sesiones
@@ -14,6 +15,7 @@ RUN apt-get update && apt-get install -y \
     libfreetype6-dev \
     libmariadb-dev-compat \
     libmariadb-dev \
+    default-mysql-client \
     && docker-php-ext-install mysqli pdo pdo_mysql
 
 # Copiar los archivos de la API al directorio raíz de Apache
