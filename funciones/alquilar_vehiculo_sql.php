@@ -34,13 +34,13 @@ if($dias!=0){
 $query = "UPDATE vehiculos SET reservado ='1' WHERE id ='$id'";
 
 $query2 = "INSERT INTO alquileres (vehiculo_alquilado, usuario_alquiler, inicio, fin, dias, precio, venta,tipo_pago,numeroTarjetaTransferencia)
-VALUES (?, ?, ?, ?, ?, ?, ?,?,?)";
+VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
 // Preparar la sentencia
 $stmt = $conexion->prepare($query2);
 
 // Asociar los parámetros y tipos (asumiendo que $id y $id_usuario son enteros)
-$stmt->bind_param("iissddd", $id, $id_usuario, $inicialFormateada, $finalFormateada, $dias, $precio, $total,$tipoPago,$numPago);
+$stmt->bind_param("iissdddsi", $id, $id_usuario, $inicialFormateada, $finalFormateada, $dias, $precio, $total,$tipoPago,$numPago);
 
 // Ejecutar la sentencia
 if ($stmt->execute()) {
