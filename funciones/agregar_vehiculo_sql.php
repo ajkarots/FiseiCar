@@ -19,5 +19,5 @@ if ($conexion->query($query) === TRUE) {
 } else {
     echo "Error updating record: " . $mysqli->error;
 }
-header("location: /Proyecto%20autos/vehiculos.php");
+header("location: ../vehiculos.php");
 ?>

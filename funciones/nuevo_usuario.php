@@ -21,8 +21,8 @@ if ($conexion->query($query) === TRUE) {
 echo'
 <script>
 alert("Usuario actualizado");
-window.location = "/Proyecto autos/editar_perfil.php";
+window.location = "../editar_perfil.php";
 </script>
 ';  
-header("location: /Proyecto%20autos/home.php");
+header("location: ../home.php");
 ?>

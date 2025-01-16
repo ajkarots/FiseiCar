@@ -30,11 +30,11 @@ if($stmt->execute()===true && $conexion->query($query) === TRUE){
     echo '
     <script>
     alert("Vehiculo disponible  ");
-    window.location = "./Proyecto%20autos/devolver.php";
+    window.location = "../devolver.php";
     </script>
 '; 
 }else{
     echo "Error updating record: " . $mysqli->error;
 }
-header("location: /Proyecto%20autos/vehiculos.php");
+header("location: ../vehiculos.php");
 ?>
