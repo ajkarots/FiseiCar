@@ -1,3 +1,24 @@
+<?php
+                include 'conexion.php';
+                session_start();
+                if(!isset($_SESSION['usuario'])){
+                    echo'
+                    <script>
+                    alert("Debes iniciar sesion par alquilar");
+                    window.location = "login.php";
+                    </script>';
+                    session_destroy();
+                    die();
+                }
+                $id_usuario=$_SESSION['usuario'];
+                $sql ="SELECT * FROM `usuarios` WHERE `id` = '$id_usuario'";
+                                $result = mysqli_query($conexion,$sql);
+                                $usuario = $result->fetch_assoc();
+                                
+                $id_vehiculo = $_GET['id'];
+                
+
+                ?>
 <html lang="en">
 
 <head>
@@ -24,28 +45,7 @@
             <div class="contenedor_facturacion" id="contenedor_facturacion">
 
                 
-                <?php
-                include 'conexion.php';
-                session_start();
-                if(!isset($_SESSION['usuario'])){
-                    echo'
-                    <script>
-                    alert("Debes iniciar sesion par alquilar");
-                    window.location = "/Proyecto autos/home.php";
-                    </script>';
-                    header("location: ./login.php");
-                    session_destroy();
-                    die();
-                }
-                $id_usuario=$_SESSION['usuario'];
-                $sql ="SELECT * FROM `usuarios` WHERE `id` = '$id_usuario'";
-                                $result = mysqli_query($conexion,$sql);
-                                $usuario = $result->fetch_assoc();
-                                
-                $id_vehiculo = $_GET['id'];
-                
 
-                ?>
                 <section>
                 <h1>Facturación</h1>
                 <br>
@@ -155,7 +155,7 @@
 
             </div>
         </section>
-        <section><a href="./historial_usuario.php" class="btn_sql_tabla" id="btn_volver_factura">Volver</a></section>
+        <section><a href="historial_usuario.php" class="btn_sql_tabla" id="btn_volver_factura">Volver</a></section>
         <button class="btn_sql_tabla" id="printPDF" onClick="window.print();">Imprimir</button>
         <section class="knowledge" id="knowledge">
             <div class="knowledge_container container">

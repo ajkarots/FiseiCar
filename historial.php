@@ -5,9 +5,8 @@ if(!isset($_SESSION['usuario'])){
     echo'
     <script>
     alert("Debes iniciar sesion par alquilar");
-    window.location = "/Proyecto autos/home.php";
+    window.location = "login.php";
     </script>';
-    header("location: ./login.php");
     session_destroy();
     die();
 }
@@ -102,7 +101,7 @@ $sql ="SELECT * FROM `usuarios` WHERE `id` = '$id'";
                     <p class="knowledge_paragraph">Contactanos y envianos tus sugerencias mendiante
                         los canales disponibles
                     </p>
-                        <a href="./contacto.html" class="cta">Contacto</a>
+                        <a href="contacto.html" class="cta">Contacto</a>
                 </div>
                 <figure class="knowledge_picture">
                     <img src="./Imagenes/bmw.png" class="knowledge_img">

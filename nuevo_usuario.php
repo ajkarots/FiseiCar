@@ -5,9 +5,9 @@ if (!isset($_SESSION['usuario'])) {
     echo '
     <script>
     alert("Debes iniciar sesion par alquilar");
-    window.location = "/Proyecto autos/home.php";
+    window.location = "login.php";
     </script>';
-    header("location: ./login.php");
+
     session_destroy();
     die();
 }

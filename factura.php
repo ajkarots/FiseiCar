@@ -5,9 +5,8 @@ if(!isset($_SESSION['usuario'])){
     echo'
     <script>
     alert("Debes iniciar sesion par alquilar");
-    window.location = "/Proyecto autos/home.php";
+    window.location = "login.php";
     </script>';
-    header("location: ./login.php");
     session_destroy();
     die();
 }
@@ -92,7 +91,7 @@ $sql ="SELECT * FROM `usuarios` WHERE `id` = '$id'";
 
                     </table>
                     <button class="btn_sql_tabla" id="printPDF" onClick="window.print();">Imprimir</button>
-                <a href="./usuario.php" class="btn_sql" id="btn_volver_factura">Volver</a>
+                <a href="usuario.php" class="btn_sql" id="btn_volver_factura">Volver</a>
             </div>
         </section>
         <section class="knowledge" id="knowledge">
