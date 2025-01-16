@@ -47,6 +47,8 @@ $sql ="SELECT * FROM `usuarios` WHERE `id` = '$id'";
                             <td class="caja_usuarios_1">Días alquilados</td>
                             <td class="caja_usuarios_1">Precio/Día</td>
                             <td class="caja_usuarios_1">Alquiler</td>
+                            <td class="caja_usuarios_1">Tipo de pago</td>
+                            <td class="caja_usuarios_1">Numero tarjeta/transferencia</td>
                             
                             
                         </tr>
@@ -71,6 +73,8 @@ $sql ="SELECT * FROM `usuarios` WHERE `id` = '$id'";
                             <td class="caja_usuarios"><?php echo $tabla ['dias'] ?></td>
                             <td class="caja_usuarios"><?php echo $tabla ['precio'] ?></td>
                             <td class="caja_usuarios"><?php echo $tabla ['venta'] ?></td>
+                            <td class="caja_usuarios"><?php echo $tabla ['tipo_pago'] ?></td>
+                            <td class="caja_usuarios"><?php echo $tabla ['numeroTarjetaTransferencia'] ?></td>
                             <td><a href="./facturaPostAdmin.php?idAlquiler=<?php echo $tabla ['ID'] ?>&idVehiculo=<?php echo $tabla ['vehiculo_alquilado'] ?>" class="btn_sql" id="btn_factura" >Generar factura</a></td>
                             <td><a href="./funciones/eliminar_registro.php?id=<?php echo $tabla ['ID'] ?>" class="btn_sql" id="btn_eliminar">Eliminar</a></td>
                         </tr>

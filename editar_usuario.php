@@ -6,7 +6,7 @@ if(!isset($_SESSION['usuario'])){
     <script>
     alert("Debes iniciar sesion par alquilar");
     window.location = "login.php";
-    </script>';s
+    </script>';
     session_destroy();
     die();
 }
