@@ -24,7 +24,7 @@ alert("Usuario actualizado");
 window.location = "../editar_perfil.php";
 </script>
 ';  
-hecho '
+echo '
 <script>
 window.location = "../home.php";
 </script>
