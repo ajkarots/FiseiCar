@@ -65,7 +65,7 @@ if (mysqli_num_rows($verCorreo) > 0) {
                     echo '
                     <script>
                     alert("Correo de verificación enviado");
-                    window.location = "nuevo_usuario.php";
+                    window.location = "../nuevo_usuario.php";
                     </script>
                     ';
                     exit();
@@ -76,7 +76,7 @@ if (mysqli_num_rows($verCorreo) > 0) {
                     if ($conexion->query($query) === TRUE) {
                         echo '<script type="text/javascript">
                         alert("Usuario Eliminado");
-                        window.location.href="login.php";
+                        window.location.href="../login.php";
                         </script>';
                     }
                     exit();

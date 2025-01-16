@@ -91,7 +91,7 @@
         echo '
             <script>
             alert("El usuario no encuentra registrado");
-            window.location = "login.php";
+            window.location = "../login.php";
             </script>
         ';
         mysqli_close($conexion);
