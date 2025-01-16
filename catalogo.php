@@ -163,7 +163,7 @@ $sql ="SELECT * FROM `usuarios` WHERE `id` = '$id'";
                     if ($transmision_buscar) {
                         $sql .= " AND Transmision = '$transmision_buscar'";
                     }
-                    $result = $conn->query($sql);
+                    $result = $conexion->query($sql);
     
                     // Verificar si hay resultados
                     if ($result->num_rows > 0) {
@@ -193,7 +193,7 @@ $sql ="SELECT * FROM `usuarios` WHERE `id` = '$id'";
 
 
                 // Cerrar conexión
-                $conn->close();
+                $conexion->close();
                 ?>
                 <!--fin php-->
             </div>
