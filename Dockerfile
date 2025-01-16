@@ -1,5 +1,4 @@
 # Usar una imagen base de PHP oficial con Apache
-CMD ["apache2-foreground"]
 FROM php:8.1-apache
 
 # Activar el módulo de reescritura de Apache y el módulo de sesiones
