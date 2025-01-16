@@ -25,7 +25,7 @@ if (mysqli_num_rows($verCorreo) > 0) {
     echo '
         <script>
         alert("El correo ya se encuentra registrado");
-        window.location = "/Proyecto autos/login.php";
+        window.location = "login.php";
         </script>
     ';
     mysqli_close($conexion);
@@ -65,7 +65,7 @@ if (mysqli_num_rows($verCorreo) > 0) {
                     echo '
                     <script>
                     alert("Correo de verificación enviado");
-                    window.location = "/Proyecto autos/nuevo_usuario.php";
+                    window.location = "nuevo_usuario.php";
                     </script>
                     ';
                     exit();
@@ -76,7 +76,7 @@ if (mysqli_num_rows($verCorreo) > 0) {
                     if ($conexion->query($query) === TRUE) {
                         echo '<script type="text/javascript">
                         alert("Usuario Eliminado");
-                        window.location.href="/Proyecto%20autos/login .php";
+                        window.location.href="login.php";
                         </script>';
                     }
                     exit();
@@ -92,7 +92,7 @@ if (mysqli_num_rows($verCorreo) > 0) {
         echo '
         <script>
         alert("Usuario no registrado");
-        window.location = "/Proyecto autos/login.php";
+        window.location = "login.php";
         </script>
     ';
         mysqli_close($conexion);

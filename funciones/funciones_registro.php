@@ -16,7 +16,10 @@
     $correo = $_POST['ingre_correo'];
     $nombre = $_POST['ingre_cont'];
     $boton = filter_input(INPUT_POST, 'btn_entrar');
-    $boton2 = $_POST['btn_recuperar_2'];
+    if (isset($_POST["btn_recuperar_2"])) {
+        $boton2 = $_POST["btn_recuperar_2"];
+        
+    } 
     
     
 
@@ -100,7 +103,7 @@
         }
         else{
             $_SESSION['usuario']= $row2 ['id'];
-            header("Location: /Proyecto%20autos/home.php");
+            header("Location:home.php");
         }
     }
 
