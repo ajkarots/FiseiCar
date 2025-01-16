@@ -17,6 +17,7 @@ try{
 }catch(Exception $e){
 
 header("location: ../vehiculos.php");
+exit();
 
 }
 

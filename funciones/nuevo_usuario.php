@@ -25,4 +25,5 @@ window.location = "../editar_perfil.php";
 </script>
 ';  
 header("location: ../home.php");
+exit();
 ?>
